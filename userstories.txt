@@ -1,0 +1,13 @@
+
+• US01: Als Autofahrer ziehe ich bei der Einfahrt einen Parkschein, um in das Parkhaus hinein fahren zu können.
+• US02: Als Kunde (Autofahrer) folge ich dem Parkleitsystem, um auf den Freien Parkplatz zu kommen.
+• US03: Als Kunde (Autofahrer) bezahle ich am Zahlautomaten meine Rechnung um das Parkhaus verlassen zu können.
+• US05: Als Firmenkartenbesitzer benutze ich meine Firmenkarte, um das Parkhaus zu befahren, ohne ein Ticket zu ziehen.
+• US06: Als Firmenkartenbesitzer benutze ich meine Firmenkarte, um das Parkhaus zu verlassen ohne zu bezahlen.
+• US07: Als Abonnent des Parkhauses ziehe ich am Automaten ein Monatsticket, um einen ganzen Monat das Parkhaus nutzen zu können.
+• US08: Als Abonnent des Parkhauses benutze ich mein Monatsticket, um einen ganzen Monat das Parkhaus zu befahren, ohne ein Ticket zu ziehen.
+• US09: Als Abonnent des Parkhauses benutze ich mein Monatsticket, um einen ganzen Monat das Parkhaus verlassen zu können ohne bezahlen zu müssen.
+• US10: Als Frau/Fahrer eines Familienautos/Mensch mit Behinderung möchte ich beim Ziehen des Tickets angezeigt bekommen, ob auf meine Bedürfnisse angepasste Parkplätze frei sind.
+• US11: Als Betreiber des Parkhauses erstelle ich mit dem System Statistiken über die eingenommenen Gebühren, um eine Übersicht zu bekommen und Gewinn und Umsatz berechnen zu können.
+• US13: Als Betreiber des Parkhauses möchte ich die Anzahl der Parkplätze im Parkhaus ändern können, um meine Parkfläche skalieren zu können.
+• US14: Als Betreiber des Parkhauses möchte ich die Öffnungszeiten des Parkhauses ändern können, um das Geschäftsmodell den Gegebenheiten anpassen zu können.
