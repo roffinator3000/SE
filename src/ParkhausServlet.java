@@ -1,10 +1,10 @@
 /*
-		Author:R.Kuhn
-		Coauthor:
-		Refactoring:
-		Date:31.08.2020
-		Time:15:33
-		Time spent:0.0h
+	Author:			R.Kuhn
+	Coauthor:
+	Refactoring:
+	Date:			31.08.2020
+	Time:			15:33
+	Time spent:		0.0h
 */
 
 import javax.servlet.ServletException;
@@ -15,12 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/Parkhaus")
-public class ParkhausServlet extends HttpServlet {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+public class ParkhausServlet extends HttpServlet{
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	
 	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	
 	}
 }
