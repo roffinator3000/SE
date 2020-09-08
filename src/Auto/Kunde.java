@@ -6,6 +6,7 @@
   Time:      16:18
   Time spent:    0.02 h
 */
+package Auto;
 
 public interface Kunde {
 

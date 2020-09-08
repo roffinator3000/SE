@@ -6,6 +6,7 @@
   Time:      17:23
   Time spent:    0.0 h  
 */
+package Auto;
 
 public class AutoTest {
 

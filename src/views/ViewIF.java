@@ -6,6 +6,9 @@
 	Time:			16:28
 	Time spent:		0.25 h
 */
+package views;
+import Parkhaus.ParkhausIF;
+import Servlet.ControllerIF;
 
 public interface ViewIF{
 	

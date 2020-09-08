@@ -6,6 +6,7 @@
   Time:      16:24
   Time spent:    0.0 h  
 */
+package Auto;
 
 public class NormalerKunde implements Kunde{
     @Override

@@ -6,6 +6,8 @@
 	Time:			15:15
 	Time spent:		0.25 h
 */
+package Servlet;
+import views.ViewIF;
 
 public interface ControllerIF{
 	public void addView(ViewIF newView);

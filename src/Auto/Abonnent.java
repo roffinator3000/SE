@@ -6,6 +6,7 @@
   Time:      16:21
   Time spent:    0.0 h  
 */
+package Auto;
 
 public class Abonnent implements Kunde{
     @Override
