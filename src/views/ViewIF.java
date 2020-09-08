@@ -4,7 +4,7 @@
 	Refactoring:	
 	Date:			01.09.2020
 	Time:			16:28
-	Time spent:		0.25 h
+	Time spent:		0.35 h
 */
 package views;
 import Parkhaus.ParkhausIF;
@@ -12,7 +12,8 @@ import Servlet.ControllerIF;
 
 public interface ViewIF{
 	
-	public void update();
+	public String update();
 	public void setController(ControllerIF ctrl);
 	public void setParkhaus(ParkhausIF ph);
+	public String getData();
 }
