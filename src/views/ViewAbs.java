@@ -14,12 +14,14 @@ import Servlet.ControllerIF;
 public abstract class ViewAbs implements ViewIF{
 	ControllerIF controller;
 	ParkhausIF parkhaus;
+	
 	ViewAbs(ControllerIF ctrl, ParkhausIF ph){
 		controller = ctrl;
 		controller.addView(this);
 		parkhaus = ph;
 		update();
 	}
+	
 	@Override
 	public void setController(ControllerIF ctrl){
 		controller.removeView(this);
