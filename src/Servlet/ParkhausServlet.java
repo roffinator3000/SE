@@ -4,7 +4,7 @@
 	Refactoring:
 	Date:			31.08.2020
 	Time:			15:33
-	Time spent:		0.75 h
+	Time spent:		0.8 h
 */
 package Servlet;
 
@@ -48,7 +48,8 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 	}
 	
 	public static boolean hasNoViews(){
-		return views.isEmpty();
+		return (views.isEmpty() && tabelle.getData().equals(""));	//emptyView always returns ""
+		// return (views.isEmpty() && tabelle.getClass().equals(new EmptyView())); //works but seems unneccesarry
 	}
 	
 	public static ArrayList<ViewIF> getViews(){

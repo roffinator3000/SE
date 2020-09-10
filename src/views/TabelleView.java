@@ -4,7 +4,7 @@
 	Refactoring:	
 	Date:			10.09.2020
 	Time:			08:08
-	Time spent:		0.25 h
+	Time spent:		0.3 h
 */
 package views;
 
@@ -19,6 +19,7 @@ public class TabelleView implements ViewIF{
 	
 	public TabelleView(ControllerIF ctrl, ParkhausIF ph){
 		controller = ctrl;
+		controller.setTabelle(this);
 		parkhaus = ph;
 	}
 	
@@ -34,7 +35,9 @@ public class TabelleView implements ViewIF{
 	
 	@Override
 	public void setController(ControllerIF ctrl){
+		controller.removeTabelle(this);
 		controller = ctrl;
+		controller.setTabelle(this);
 	}
 	
 	@Override
