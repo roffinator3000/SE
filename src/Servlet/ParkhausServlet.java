@@ -9,6 +9,7 @@
 package Servlet;
 
 import views.*;
+import Parkhaus.ParkhausIF;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 public class ParkhausServlet extends HttpServlet implements ControllerIF{
 	private static ArrayList<ViewIF> views = new ArrayList<>();
 	private static ViewIF tabelle = new EmptyView();
+	private static ParkhausIF parkhaus; //todo init
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String body = getBody(request);
@@ -40,11 +42,35 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 				//todo an parkhaus übergeben
 				updater();
 				break;
+			case "button":
+			case "choose":
+				switch (bodyArr[1]){
+					case "kundenTyp":
+						new KundentypView(this, parkhaus);
+//						System.out.println("new KundentypView");
+						break;
+					case "menschenArt":
+						new MenschenartView(this, parkhaus);
+//						System.out.println("new MenschenartView");
+						break;
+					case "tabelle":
+						new TabelleView(this, parkhaus);
+//						System.out.println("new TabelleView");
+						break;
+				}
+				break;
 		}
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-	
+		String body = getBody(request);
+		String[] bodyArr = body.split(",");
+		System.out.println("GET" + body);
+		//
+		//		switch (bodyArr[0]){
+		//			case "a":
+		//				break;
+		//		}
 	}
 	
 	public static boolean hasNoViews(){
