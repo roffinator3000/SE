@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 @WebServlet("/Parkhaus")
 public class ParkhausServlet extends HttpServlet implements ControllerIF{
-	private static ArrayList<ViewIF> views = new ArrayList<>();
+	private static final ArrayList<ViewIF> views = new ArrayList<>();
 	private static ViewIF tabelle = new EmptyView();
 	private static ParkhausIF parkhaus; //todo init
 	
@@ -64,7 +64,7 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String body = getBody(request);
-		String[] bodyArr = body.split(",");
+//		String[] bodyArr = body.split(",");
 		System.out.println("GET" + body);
 		//
 		//		switch (bodyArr[0]){

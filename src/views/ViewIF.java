@@ -12,8 +12,8 @@ import Servlet.ControllerIF;
 
 public interface ViewIF{
 	
-	public String update();
-	public void setController(ControllerIF ctrl);
-	public void setParkhaus(ParkhausIF ph);
-	public String getData();
+	String update();
+	void setController(ControllerIF ctrl);
+	void setParkhaus(ParkhausIF ph);
+	String getData();
 }
