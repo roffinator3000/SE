@@ -4,11 +4,11 @@
 	Refactoring:
 	Date:			31.08.2020
 	Time:			15:33
-	Time spent:		0.5 h
+	Time spent:		0.75 h
 */
 package Servlet;
 
-import views.ViewIF;
+import views.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,12 +24,14 @@ import java.util.ArrayList;
 @WebServlet("/Parkhaus")
 public class ParkhausServlet extends HttpServlet implements ControllerIF{
 	private static ArrayList<ViewIF> views = new ArrayList<>();
+	private static ViewIF tabelle = new EmptyView();
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		String[] body = getBody(request).split(",");
+		String body = getBody(request);
+		String[] bodyArr = body.split(",");
 		System.out.println(body);
 		
-		switch (body[0]){
+		switch (bodyArr[0]){
 			case "enter":
 				//todo an parkhaus übergeben
 				updater();
@@ -65,9 +67,24 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 	}
 	
 	@Override
+	public void setTabelle(ViewIF newTab){
+		tabelle = newTab;
+	}
+	
+	@Override
+	public void removeTabelle(ViewIF oldTab){
+		tabelle = new EmptyView(this, parkhaus);
+	}
+	
+	public static String getTabelleData() {
+		return tabelle.getData();
+	}
+	
+	@Override
 	public void updater(){
 		for (ViewIF e : views)
 			e.update();
+		tabelle.update();
 	}
 	
 	
