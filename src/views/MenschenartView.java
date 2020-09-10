@@ -15,7 +15,7 @@ public class MenschenartView extends ViewAbs{
 	private String data = "<h2> this is the incomplete view for MENSCHENART</h2>";
 		//contains the HTML/CSS/js data to embedd in a HTML page
 	
-	MenschenartView(ControllerIF ctrl, ParkhausIF ph){
+	public MenschenartView(ControllerIF ctrl, ParkhausIF ph){
 		super(ctrl, ph);
 	}
 	

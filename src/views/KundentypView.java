@@ -15,7 +15,7 @@ public class KundentypView extends ViewAbs{
 	private String data = "<h2> this is the incomplete view for KUNDENTYP</h2>";
 		//contains the HTML/CSS/js data to embedd in a HTML page
 	
-	KundentypView(ControllerIF ctrl, ParkhausIF ph){
+	public KundentypView(ControllerIF ctrl, ParkhausIF ph){
 		super(ctrl, ph);
 	}
 	
