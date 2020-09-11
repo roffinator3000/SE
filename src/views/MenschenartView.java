@@ -30,4 +30,8 @@ public class MenschenartView extends ViewAbs{
 	public String getData(){
 		return data;
 	}
+	
+	public String toString(){
+		return data;
+	}
 }

@@ -13,8 +13,8 @@
 		<title>Views - Semesterprojekt Parkhaus</title>
 	</head>
 	<body>
-		<br><br><br>
-<%--		<h2> this is <i>not</i> a view</h2>--%>
+		<br>
+<%--		<br><br>--%>
 		
 		<% if (ParkhausServlet.hasNoViews()){
 			out.print("<h2><t>looks like you did not choose any options for graphics</h2>");

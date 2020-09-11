@@ -35,6 +35,10 @@ public class TabelleView implements ViewIF{
 		return data;
 	}
 	
+	public String toString(){
+		return data;
+	}
+	
 	@Override
 	public void setController(ControllerIF ctrl){
 		controller.removeTabelle(this);

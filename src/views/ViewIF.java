@@ -16,4 +16,5 @@ public interface ViewIF{
 	void setController(ControllerIF ctrl);
 	void setParkhaus(ParkhausIF ph);
 	String getData();
+	String toString();
 }
