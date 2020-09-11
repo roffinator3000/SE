@@ -17,11 +17,13 @@ public class MenschenartView extends ViewAbs{
 	
 	public MenschenartView(ControllerIF ctrl, ParkhausIF ph){
 		super(ctrl, ph);
+		update();
 	}
 	
 	@Override
 	public String update(){
-		return "<h2> this is <i>not</i> a real view</h2><br> PS: Menschenart";
+		data = "<h2> this is <i>not</i> a real view</h2><br> PS: Menschenart";
+		return data;
 	}
 	
 	@Override

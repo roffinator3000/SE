@@ -21,10 +21,10 @@
 		} else{
 			ArrayList<ViewIF> views = ParkhausServlet.getViews();
 			for (ViewIF view : views){
-				out.print(view.getData());
-				out.print("<br><br>");
+				out.println(view.getData());
+				out.println("<br><br>");
 			}
-			out.print(ParkhausServlet.getTabelleData());
+			out.println(ParkhausServlet.getTabelleData());
 		}
 		%>
 	</body>

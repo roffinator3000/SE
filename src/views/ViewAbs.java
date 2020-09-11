@@ -19,7 +19,7 @@ public abstract class ViewAbs implements ViewIF{
 		controller = ctrl;
 		controller.addView(this);
 		parkhaus = ph;
-		update();
+//		update();		//does not work?!?
 	}
 	
 	@Override

@@ -21,11 +21,13 @@ public class TabelleView implements ViewIF{
 		controller = ctrl;
 		controller.setTabelle(this);
 		parkhaus = ph;
+		update();
 	}
 	
 	@Override
 	public String update(){
-		return "<h2> this is <i>not</i> a real view</h2><br> PS: Tabelle";
+		data = "<h2> this is <i>not</i> a real view</h2><br> PS: Tabelle";
+		return data;
 	}
 	
 	@Override

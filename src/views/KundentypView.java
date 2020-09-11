@@ -17,11 +17,13 @@ public class KundentypView extends ViewAbs{
 	
 	public KundentypView(ControllerIF ctrl, ParkhausIF ph){
 		super(ctrl, ph);
+		update();
 	}
 	
 	@Override
 	public String update(){
-		return "<h2> this is <i>not</i> a real view</h2><br> PS: Kundentyp";
+		data = "<h2> this is <i>not</i> a real view</h2><br> PS: Kundentyp";
+		return data;
 	}
 	
 	@Override
