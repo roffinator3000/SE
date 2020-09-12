@@ -9,44 +9,9 @@
 	<head>
 		<title>Semesterprojekt Parkhaus</title>
 		<script src='parkhaus-9.1.7.js'></script>
-		<style>
-			.button { /*https://www.w3schools.com/csS/css3_buttons.asp*/
-				background-color: #434343; /* Black */
-				border: none;
-				color: white;
-				padding: 15px 17px;
-				text-align: center;
-				text-decoration: none;
-				display: inline-block;
-				font-size: 14px;
-				margin: 4px 2px;
-				transition-duration: 0.4s;
-				border-radius: 4px;
-			}
-			
-			.button:hover {
-				background-color: #009aB4; /* Blue */
-				color: white;
-			}
-		
-		</style>
-	</head>
-	<body>
-		<h1>Parkhaus </h1>
-		<br><br>
-		<h2>Anzeigeoptionen </h2>
-		Optionen: &emsp;
-		
-		<button class="button" onclick='csv_post_event("button", "kundenTyp")'>Graph Kundentyp</button>
-		
-		<button class="button" onclick='csv_post_event("button", "menschenArt")'>Graph Menschenart</button>
-		
-		<button class="button" onclick='csv_post_event("button", "tabelle")'>Log als Tabelle</button>
-		
 		<script type="text/javascript">
 			
 			let server_url = "http://localhost:8080/web_war_exploded/Parkhaus";
-			
 			async function csv_post_event(event, ...values) {
 				if (server_url) {
 					const request = [event, ...values].join(",");
@@ -70,6 +35,41 @@
 			}
 		</script>
 		
+		<style>
+			.button { /*https://www.w3schools.com/csS/css3_buttons.asp*/
+				background-color: #434343; /* Black */
+				border: none;
+				color: white;
+				padding: 15px 17px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 14px;
+				margin: 4px 2px;
+				transition-duration: 0.4s;
+				border-radius: 4px;
+			}
+			
+			.button:hover {
+				background-color: #009aB4; /* Blue */
+				color: white;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<h1>Parkhaus-Simulation </h1>
+		<h3>Projekt von Lawin Daskin, Raphael Kuhn und Constanze Schirmacher</h3>
+		<h4>Erstellt für Softwareengineering 1 bei Prof. M. Kaul</h4>
+		<br>
+		<h2>Anzeigeoptionen </h2>
+		Optionen: &emsp;
+		
+		<button class="button" onclick='csv_post_event("button", "kundenTyp")'>Graph Kundentyp</button>
+		
+		<button class="button" onclick='csv_post_event("button", "menschenArt")'>Graph Menschenart</button>
+		
+		<button class="button" onclick='csv_post_event("button", "tabelle")'>Log als Tabelle</button>
 		
 		<br>
 		<a href="${pageContext.request.contextPath}/views.jsp" target="_blank" class="button">
