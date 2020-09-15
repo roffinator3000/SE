@@ -4,7 +4,7 @@
 	Refactoring:
 	Date:			31.08.2020
 	Time:			15:33
-	Time spent:		0.8 h
+	Time spent:		1.1 h
 */
 package Servlet;
 
@@ -44,20 +44,7 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 				break;
 			case "button":
 			case "choose":
-				switch (bodyArr[1]){
-					case "kundenTyp":
-						new KundentypView(this, parkhaus);
-//						System.out.println("new KundentypView");
-						break;
-					case "menschenArt":
-						new MenschenartView(this, parkhaus);
-//						System.out.println("new MenschenartView");
-						break;
-					case "tabelle":
-						new TabelleView(this, parkhaus);
-//						System.out.println("new TabelleView");
-						break;
-				}
+				toggleView(bodyArr[1]);
 				break;
 		}
 	}
@@ -73,9 +60,28 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 		//		}
 	}
 	
+	private void toggleView(String s) {
+		for (ViewIF e : views){
+			if (e.sameType(s)){			// check if the clicked view is already in the list
+				e.delete(this);		// and remove if so
+				return;
+			}
+		}
+		if (tabelle.sameType(s)){		// same for tabelle
+			tabelle.delete(this);
+			return;
+		}
+		
+		switch (s){					// else add a view of that type
+			case "kundenTyp" -> new KundentypView(this, parkhaus);
+			case "menschenArt" -> new MenschenartView(this, parkhaus);
+			case "tabelle" -> new TabelleView(this, parkhaus);
+		}
+	}
+	
 	public static boolean hasNoViews(){
 		return (views.isEmpty() && tabelle.sameType(""));	//emptyView returns true on ""
-		// return (views.isEmpty() && tabelle.getClass().equals(new EmptyView())); //works but seems unneccesarry
+		// return (views.isEmpty() && tabelle.getClass().equals(new EmptyView())); //works but seems unnecessary
 	}
 	
 	public static ArrayList<ViewIF> getViews(){
