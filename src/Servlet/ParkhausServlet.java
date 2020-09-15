@@ -74,14 +74,13 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 	}
 	
 	public static boolean hasNoViews(){
-		return (views.isEmpty() && tabelle.getData().equals(""));	//emptyView always returns ""
+		return (views.isEmpty() && tabelle.sameType(""));	//emptyView returns true on ""
 		// return (views.isEmpty() && tabelle.getClass().equals(new EmptyView())); //works but seems unneccesarry
 	}
 	
 	public static ArrayList<ViewIF> getViews(){
 		return views;
 	}
-	
 	
 	@Override
 	public void addView(ViewIF newView){

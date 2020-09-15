@@ -4,7 +4,7 @@
 	Refactoring:	
 	Date:			10.09.2020
 	Time:			08:08
-	Time spent:		0.3 h
+	Time spent:		0.4 h
 */
 package views;
 
@@ -47,7 +47,18 @@ public class TabelleView implements ViewIF{
 	}
 	
 	@Override
+	public void delete(ControllerIF ctrl){
+		controller.removeTabelle(this);
+		controller = null;
+	}
+	
+	@Override
 	public void setParkhaus(ParkhausIF ph){
 		parkhaus = ph;
+	}
+	
+	@Override
+	public boolean sameType(String type){
+		return "tabelle".equals(type.toLowerCase());
 	}
 }

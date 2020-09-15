@@ -4,7 +4,7 @@
 	Refactoring:	
 	Date:			07.09.2020
 	Time:			18:51
-	Time spent:		0.1 h
+	Time spent:		0.2 h
 */
 package views;
 
@@ -33,5 +33,10 @@ public class MenschenartView extends ViewAbs{
 	
 	public String toString(){
 		return data;
+	}
+	
+	@Override
+	public boolean sameType(String type){
+		return "menschenart".equals(type.toLowerCase());
 	}
 }
