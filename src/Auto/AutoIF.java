@@ -6,6 +6,7 @@
   Time:      11:34
   Time spent:    0.2 h
 */
+package Auto;
 
 public interface AutoIF {
      int getNummerschild();

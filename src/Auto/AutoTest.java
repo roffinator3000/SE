@@ -6,6 +6,7 @@
   Time:      17:23
   Time spent:    0.0 h  
 */
+package Auto;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

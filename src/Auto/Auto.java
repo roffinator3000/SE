@@ -6,6 +6,7 @@
   Time:      11:51
   Time spent:    2.0 h
 */
+package Auto;
 
 public class Auto {
     private int nummerschild;
@@ -27,7 +28,7 @@ public class Auto {
 
         switch (kundentyp) {
             case "Normal" -> this.kundetyp = new NormalerKunde();
-            case "Firmenkunde" -> this.kundetyp = new Firmenkunde();
+            case "Auto.Firmenkunde" -> this.kundetyp = new Firmenkunde();
             case ("Abbonent") -> this.kundetyp = new Abonnent();
         }
     }
