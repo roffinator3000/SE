@@ -29,7 +29,7 @@ public class Parkhaus implements ParkhausIF {
 	@Override
 	public void autoEnter(String[] neuesAuto) {
 								//	nummernschild				zeit einfahrt					tickethash	farbcode		kundentyp	menschenart
-		Auto auto = new Auto(Integer.parseInt(neuesAuto[1]), Integer.parseInt(neuesAuto[2]), neuesAuto[5], neuesAuto[6], neuesAuto[8]); // todo Menschenart hinzufuegen
+		Auto auto = new Auto(Integer.parseInt(neuesAuto[1]), Integer.parseInt(neuesAuto[2]), neuesAuto[5], neuesAuto[6], neuesAuto[8], neuesAuto[9]);
 		autosEingefahren.add(auto);
 		
 		switch (neuesAuto[8].toLowerCase()){
