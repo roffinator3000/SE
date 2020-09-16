@@ -11,6 +11,6 @@ package Auto;
 public class Firmenkunde implements Kunde {
     @Override
     public int preisberechnen(int zeit) {
-        return 0;
+        return zeit*2;
     }
 }
