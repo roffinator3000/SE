@@ -4,12 +4,12 @@
 	Refactoring:
 	Date:			31.08.2020
 	Time:			15:33
-	Time spent:		1.1 h
+	Time spent:		1.15 h
 */
 package Servlet;
 
 import views.*;
-import Parkhaus.ParkhausIF;
+import Parkhaus.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class ParkhausServlet extends HttpServlet implements ControllerIF{
 	private static final ArrayList<ViewIF> views = new ArrayList<>();
 	private static ViewIF tabelle = new EmptyView();
-	private static ParkhausIF parkhaus; //todo init
+	private static ParkhausIF parkhaus = new Parkhaus();
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String body = getBody(request);
@@ -34,25 +34,22 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 		System.out.println(body);
 		
 		switch (bodyArr[0]){
-			case "enter":
-				//todo an parkhaus übergeben
+			case "enter" -> {
+				parkhaus.autoEnter(bodyArr);
 				updater();
-				break;
-			case "leave":
-				//todo an parkhaus übergeben
+			}
+			case "leave" -> {
+				parkhaus.autoLeave(bodyArr);
 				updater();
-				break;
-			case "button":
-			case "choose":
-				toggleView(bodyArr[1]);
-				break;
+			}
+			case "button", "choose" -> toggleView(bodyArr[1]);
 		}
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String body = getBody(request);
 //		String[] bodyArr = body.split(",");
-		System.out.println("GET" + body);
+		System.out.println("GET " + body);
 		//
 		//		switch (bodyArr[0]){
 		//			case "a":
@@ -63,7 +60,7 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 	private void toggleView(String s) {
 		for (ViewIF e : views){
 			if (e.sameType(s)){			// check if the clicked view is already in the list
-				e.delete(this);		// and remove if so
+				e.delete(this);			// and remove if so
 				return;
 			}
 		}
@@ -72,7 +69,7 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 			return;
 		}
 		
-		switch (s){					// else add a view of that type
+		switch (s){						// else add a view of that type
 			case "kundenTyp" -> new KundentypView(this, parkhaus);
 			case "menschenArt" -> new MenschenartView(this, parkhaus);
 			case "tabelle" -> new TabelleView(this, parkhaus);
