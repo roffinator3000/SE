@@ -16,12 +16,14 @@ public class Auto {
     private String farbcode;
     private int parkplatznummer;
     private Kunde kundetyp;
+    private String menschenart;
 
-    public Auto(int nummerschild,int zeitreinfahren,String tickehash,String farbcode,String kundentyp){
+    public Auto(int nummerschild,int zeitreinfahren,String tickehash,String farbcode,String kundentyp,String menschenart){
         this.nummerschild=nummerschild;
         this.zeitreinfahren=zeitreinfahren;
         this.tickehash=tickehash;
         this.farbcode=farbcode;
+        this.menschenart=menschenart;
 
         switch (kundentyp) {
             case "Normal" -> this.kundetyp = new NormalerKunde();
@@ -68,5 +70,9 @@ public class Auto {
 
     public void setParkplatznummer(int parkplatznummer) {
         this.parkplatznummer = parkplatznummer;
+    }
+
+    public String getMenschenart() {
+        return menschenart;
     }
 }

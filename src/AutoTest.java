@@ -17,7 +17,7 @@ public class AutoTest {
         static Auto a1;
         @BeforeAll
         static void test1(){
-            a1 = new Auto(23,123311,"#aaddjaj","#HkfjJ1","Firmenkunde");
+            a1 = new Auto(23,123311,"#aaddjaj","#HkfjJ1","Firmenkunde","Frau");
 
 
         }
