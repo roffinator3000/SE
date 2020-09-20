@@ -33,7 +33,7 @@ public class Parkhaus implements ParkhausIF {
 		autosEingefahren.add(auto);
 		
 		switch (neuesAuto[8].toLowerCase()){
-			case "abonennt":
+			case "abonnent":
 				kundentyp[0]++;
 				break;
 			case "firmenkunde":
