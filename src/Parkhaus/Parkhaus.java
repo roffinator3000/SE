@@ -46,10 +46,10 @@ public class Parkhaus implements ParkhausIF {
 				break;
 		}
 		switch (neuesAuto[9].toLowerCase()){
-			case "frauen":
+			case "frau":
 				menschenart[0]++;
 				break;
-			case "behinderte":
+			case "behindert":
 				menschenart[1]++;
 				break;
 			case "familie":
@@ -65,7 +65,7 @@ public class Parkhaus implements ParkhausIF {
 	public void autoLeave(String[] altesAuto) {
 		Auto carLeaving = null;
 		for (Auto a: autosEingefahren) {
-			if (Integer.parseInt(altesAuto[1]) == a.getNummerschild() && altesAuto[6] == a.getFarbcode()){
+			if (Integer.parseInt(altesAuto[1]) == a.getNummerschild() && altesAuto[6].equals(a.getFarbcode())){
 				carLeaving = a;
 			}
 		}
