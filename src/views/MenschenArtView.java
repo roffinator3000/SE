@@ -1,5 +1,5 @@
 /*
-	Author:			Lawin Daskin und R. Kuhn
+	Author:			L. Daskin und R. Kuhn
 	Coauthor:		
 	Refactoring:	
 	Date:			07.09.2020
@@ -16,7 +16,7 @@ import javax.json.JsonObject;
 
 public class MenschenArtView extends ViewAbs{
 	private String data = "<h2> this is the incomplete view for MENSCHENART</h2>";
-		//contains the HTML/CSS/js data to embedd in a HTML page
+	//contains the HTML/CSS/js data to embedd in a HTML page
 	
 	public MenschenArtView(ControllerIF ctrl, ParkhausIF ph){
 		super(ctrl, ph);
@@ -25,9 +25,8 @@ public class MenschenArtView extends ViewAbs{
 	
 	@Override
 	public String update(){
-		int[] anzahlkunden =parkhaus.gibDaten()[1];
-
-
+		int[] anzahlKunden = parkhaus.gibDaten()[1];
+		
 		JsonObject  value= Json.createObjectBuilder()
 				.add("data",Json.createArrayBuilder()
 						.add(Json.createObjectBuilder()
@@ -37,13 +36,13 @@ public class MenschenArtView extends ViewAbs{
 										.add("Familien")
 										.add("Andere"))
 								.add("values",Json.createArrayBuilder()
-										.add(anzahlkunden[0])
-										.add(anzahlkunden[1])
-										.add(anzahlkunden[2])
-										.add(anzahlkunden[3]))
+										.add(anzahlKunden[0])
+										.add(anzahlKunden[1])
+										.add(anzahlKunden[2])
+										.add(anzahlKunden[3]))
 								.add("type","pie")
 						)).build();
-
+		
 		data = "<script type=\"text/javascript\"> var test2 = function(){var layout2 = {   height: 400,   width: 500 };  Plotly.newPlot('myDiv2', "+value.toString()+", layout2);}\n" +
 				"if(!window.load)\n" +
 				"  window.load = []\n" +

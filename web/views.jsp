@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<br>
-		<%--		<br><br>--%>
+		<%--<br><br>--%>
 		
 		<% if (ParkhausServlet.hasNoViews()){
 			out.print("<h2><t>looks like you did not choose any options for graphics</h2>");
@@ -30,14 +30,16 @@
 			out.println(ParkhausServlet.getTabelleData());
 		}
 		%>
-		<%--Author:		Lawin Daskin
-		  Date			03.10.2020
-		  Time			13:24
-	      Time spent:		20 m--%>
-	<script>window.onload = () => {
-		for(const func of window.load)
-			func();
-	}</script>
-      <%-- /lawin Daskin --%>
+		
+		<%--Author:			Lawin Daskin
+			Date			03.10.2020
+			Time			13:24
+			Time spent:		20 m	--%>
+		<script>window.onload = () => {
+			for (const func of window.load)
+				func();
+		}</script>
+		<%--	/Lawin Daskin	--%>
+	
 	</body>
 </html>
