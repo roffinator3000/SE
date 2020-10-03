@@ -11,13 +11,19 @@
 <html>
 	<head>
 		<title>Views - Semesterprojekt Parkhaus</title>
-		<meta http-equiv="refresh" content="5"/>
-		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body>
-		<br>
-		<%--<br><br>--%>
+		<%--	<meta http-equiv="refresh" content="5"/>--%>
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="style.css">
+        </head>
+        <body>
+            <br>
+            <%--<br><br>--%>
+		<div class="header">
+			<a href="#default" class="logo"> <img src="/logo_print_studierende.jpg"  alt="Parkhaus"> </a>
+			<div class="header-right">
+				<a class="active" href="#home">Home</a>
+			</div>
+		</div>
 		
 		<% if (ParkhausServlet.hasNoViews()){
 			out.print("<h2><t>looks like you did not choose any options for graphics</h2>");
@@ -30,7 +36,7 @@
 			out.println(ParkhausServlet.getTabelleData());
 		}
 		%>
-		
+
 		<%--Author:			Lawin Daskin
 			Date			03.10.2020
 			Time			13:24
@@ -40,6 +46,6 @@
 				func();
 		}</script>
 		<%--	/Lawin Daskin	--%>
-	
+
 	</body>
 </html>
