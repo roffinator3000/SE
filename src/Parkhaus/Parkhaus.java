@@ -21,20 +21,20 @@ public class Parkhaus implements ParkhausIF {
 	private int[] menschenart;
 	
 	
-	public Parkhaus(){
+	public Parkhaus() {
 		autosAusgefahren = new ArrayList<>();
 		autosEingefahren = new ArrayList<>();
-		kundentyp = new int[3];		// Abonennt, Firmenkunde, normal
-		menschenart = new int[4];	// Frauen, Behinderte, Familie, andere
+		kundentyp = new int[3];        // Abonennt, Firmenkunde, normal
+		menschenart = new int[4];    // Frauen, Behinderte, Familie, andere
 	}
 	
 	@Override
 	public void autoEnter(String[] neuesAuto) {
-								//	nummernschild				zeit einfahrt					tickethash	farbcode		kundentyp	menschenart
+		//	nummernschild						zeit einfahrt				tickethash		farbcode		kundentyp	menschenart
 		Auto auto = new Auto(Integer.parseInt(neuesAuto[1]), new Date(Long.parseLong(neuesAuto[2])), neuesAuto[5], neuesAuto[6], neuesAuto[8], neuesAuto[9]);
 		autosEingefahren.add(auto);
 		
-		switch (neuesAuto[8].toLowerCase()){
+		switch (neuesAuto[8].toLowerCase()) {
 			case "abonnent":
 				kundentyp[0]++;
 				break;
@@ -45,7 +45,7 @@ public class Parkhaus implements ParkhausIF {
 				kundentyp[2]++;
 				break;
 		}
-		switch (neuesAuto[9].toLowerCase()){
+		switch (neuesAuto[9].toLowerCase()) {
 			case "frauen":
 				menschenart[0]++;
 				break;
@@ -64,12 +64,13 @@ public class Parkhaus implements ParkhausIF {
 	@Override
 	public void autoLeave(String[] altesAuto) {
 		Auto carLeaving = null;
-		for (Auto a: autosEingefahren) {
-			if (Integer.parseInt(altesAuto[1]) == a.getNummerschild() && altesAuto[6] == a.getFarbcode()){
+		for (Auto a : autosEingefahren) {
+			if (Integer.parseInt(altesAuto[1]) == a.getNummerschild() && altesAuto[6] == a.getFarbcode()) {
 				carLeaving = a;
 			}
 		}
 		autosEingefahren.remove(carLeaving);
+		//						zeit aufenthalt				parkplatznummer
 		carLeaving.ausfahrt(Long.parseLong(altesAuto[3]), Integer.parseInt(altesAuto[7]));
 		autosAusgefahren.add(carLeaving);
 	}
