@@ -4,7 +4,7 @@
 	Refactoring:
 	Date:			31.08.2020
 	Time:			15:33
-	Time spent:		1.15 h
+	Time spent:		1.2 h
 */
 package Servlet;
 
@@ -70,9 +70,11 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 		}
 		
 		switch (s){						// else add a view of that type
-			case "kundenTyp" -> new KundentypView(this, parkhaus);
-			case "menschenArt" -> new MenschenartView(this, parkhaus);
+			case "kundenTyp" -> new KundenTypView(this, parkhaus);
+			case "menschenArt" -> new MenschenArtView(this, parkhaus);
 			case "tabelle" -> new TabelleView(this, parkhaus);
+			case "kunden" -> new KundenView(this, parkhaus);
+			case "Einnahmen" -> new EinnahmenView(this, parkhaus);
 		}
 	}
 	

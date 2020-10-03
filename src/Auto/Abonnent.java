@@ -10,7 +10,7 @@ package Auto;
 
 public class Abonnent implements Kunde{
     @Override
-    public int preisberechnen(int zeit) {
+    public long preisberechnen(long zeit) {
         return zeit;
     }
 }
