@@ -9,6 +9,8 @@
 package Parkhaus;
 
 import java.util.ArrayList;
+import java.util.Date;
+
 import Auto.Auto;
 
 public class Parkhaus implements ParkhausIF {
@@ -29,7 +31,7 @@ public class Parkhaus implements ParkhausIF {
 	@Override
 	public void autoEnter(String[] neuesAuto) {
 								//	nummernschild				zeit einfahrt					tickethash	farbcode		kundentyp	menschenart
-		Auto auto = new Auto(Integer.parseInt(neuesAuto[1]), Integer.parseInt(neuesAuto[2]), neuesAuto[5], neuesAuto[6], neuesAuto[8], neuesAuto[9]);
+		Auto auto = new Auto(Integer.parseInt(neuesAuto[1]), new Date(Long.parseLong(neuesAuto[2])), neuesAuto[5], neuesAuto[6], neuesAuto[8], neuesAuto[9]);
 		autosEingefahren.add(auto);
 		
 		switch (neuesAuto[8].toLowerCase()){
@@ -68,7 +70,7 @@ public class Parkhaus implements ParkhausIF {
 			}
 		}
 		autosEingefahren.remove(carLeaving);
-		carLeaving.ausfahrt(Integer.parseInt(altesAuto[3]), Integer.parseInt(altesAuto[7]));
+		carLeaving.ausfahrt(Long.parseLong(altesAuto[3]), Integer.parseInt(altesAuto[7]));
 		autosAusgefahren.add(carLeaving);
 	}
 	
