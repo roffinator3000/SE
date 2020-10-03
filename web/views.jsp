@@ -11,10 +11,11 @@
 <html>
 	<head>
 		<title>Views - Semesterprojekt Parkhaus</title>
+		<meta http-equiv="refresh" content="1"/>
 	</head>
 	<body>
 		<br>
-<%--		<br><br>--%>
+		<%--		<br><br>--%>
 		
 		<% if (ParkhausServlet.hasNoViews()){
 			out.print("<h2><t>looks like you did not choose any options for graphics</h2>");

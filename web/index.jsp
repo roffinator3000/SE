@@ -2,7 +2,7 @@
 	Author:			R. Kuhn
 	Date:			08.08.2020
 	Time			15:12
-	Time spent:		5 h
+	Time spent:		5.1 h
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -62,15 +62,21 @@
 		<h3>Projekt von Lawin Daskin, Raphael Kuhn und Constanze Schirmacher</h3>
 		<h4>Erstellt für Softwareengineering 1 bei Prof. M. Kaul</h4>
 		<br>
-		<h2>Anzeigeoptionen </h2>
-		Optionen: &emsp;
+		<h2>Anzeigeoptionen: </h2>
+<%--		Optionen: &emsp--%>
 		
 		<button class="button" onclick='csv_post_event("button", "kundenTyp")'>Graph Kundentyp</button>
 		
 		<button class="button" onclick='csv_post_event("button", "menschenArt")'>Graph Menschenart</button>
 		
+		<button class="button" onclick='csv_post_event("button", "kunden")'>Übersicht Kunden</button>
+		
+		<button class="button" onclick='csv_post_event("button", "einnahemn")'>Übersicht Einnahemn</button>
+		
+		
 		<button class="button" onclick='csv_post_event("button", "tabelle")'>Log als Tabelle</button>
 		
+		<br>
 		<br>
 		<a href="${pageContext.request.contextPath}/views.jsp" target="_blank" class="button">
 			Show choosen Data</a>
