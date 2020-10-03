@@ -61,15 +61,15 @@ public class Parkhaus implements ParkhausIF {
 	
 	@Override
 	public void autoLeave(String[] altesAuto) {
-		Auto weg = null;
+		Auto carLeaving = null;
 		for (Auto a: autosEingefahren) {
 			if (Integer.parseInt(altesAuto[1]) == a.getNummerschild() && altesAuto[6] == a.getFarbcode()){
-				weg = a;
+				carLeaving = a;
 			}
 		}
-		autosEingefahren.remove(weg);
-		weg.ausfahrt(Integer.parseInt(altesAuto[3]), Integer.parseInt(altesAuto[7]));
-		autosAusgefahren.add(weg);
+		autosEingefahren.remove(carLeaving);
+		carLeaving.ausfahrt(Integer.parseInt(altesAuto[3]), Integer.parseInt(altesAuto[7]));
+		autosAusgefahren.add(carLeaving);
 	}
 	
 	@Override
