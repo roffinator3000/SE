@@ -4,7 +4,7 @@
 	Refactoring:	
 	Date:			07.09.2020
 	Time:			18:35
-	Time spent:		0.3 h
+	Time spent:		0.4 h
 */
 package views;
 
@@ -27,6 +27,12 @@ public abstract class ViewAbs implements ViewIF{
 		controller.removeView(this);
 		controller = ctrl;
 		controller.addView(this);
+	}
+	
+	@Override
+	public void delete(ControllerIF ctrl){
+		controller.removeView(this);
+		controller = null;
 	}
 	
 	@Override

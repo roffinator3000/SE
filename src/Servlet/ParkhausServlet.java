@@ -4,12 +4,12 @@
 	Refactoring:
 	Date:			31.08.2020
 	Time:			15:33
-	Time spent:		0.8 h
+	Time spent:		1.15 h
 */
 package Servlet;
 
 import views.*;
-import Parkhaus.ParkhausIF;
+import Parkhaus.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class ParkhausServlet extends HttpServlet implements ControllerIF{
 	private static final ArrayList<ViewIF> views = new ArrayList<>();
 	private static ViewIF tabelle = new EmptyView();
-	private static ParkhausIF parkhaus; //todo init
+	private static ParkhausIF parkhaus = new Parkhaus();
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String body = getBody(request);
@@ -34,38 +34,22 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 		System.out.println(body);
 		
 		switch (bodyArr[0]){
-			case "enter":
-				//todo an parkhaus übergeben
+			case "enter" -> {
+				parkhaus.autoEnter(bodyArr);
 				updater();
-				break;
-			case "leave":
-				//todo an parkhaus übergeben
+			}
+			case "leave" -> {
+				parkhaus.autoLeave(bodyArr);
 				updater();
-				break;
-			case "button":
-			case "choose":
-				switch (bodyArr[1]){
-					case "kundenTyp":
-						new KundentypView(this, parkhaus);
-//						System.out.println("new KundentypView");
-						break;
-					case "menschenArt":
-						new MenschenartView(this, parkhaus);
-//						System.out.println("new MenschenartView");
-						break;
-					case "tabelle":
-						new TabelleView(this, parkhaus);
-//						System.out.println("new TabelleView");
-						break;
-				}
-				break;
+			}
+			case "button", "choose" -> toggleView(bodyArr[1]);
 		}
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String body = getBody(request);
 //		String[] bodyArr = body.split(",");
-		System.out.println("GET" + body);
+		System.out.println("GET " + body);
 		//
 		//		switch (bodyArr[0]){
 		//			case "a":
@@ -73,15 +57,33 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 		//		}
 	}
 	
+	private void toggleView(String s) {
+		for (ViewIF e : views){
+			if (e.sameType(s)){			// check if the clicked view is already in the list
+				e.delete(this);			// and remove if so
+				return;
+			}
+		}
+		if (tabelle.sameType(s)){		// same for tabelle
+			tabelle.delete(this);
+			return;
+		}
+		
+		switch (s){						// else add a view of that type
+			case "kundenTyp" -> new KundentypView(this, parkhaus);
+			case "menschenArt" -> new MenschenartView(this, parkhaus);
+			case "tabelle" -> new TabelleView(this, parkhaus);
+		}
+	}
+	
 	public static boolean hasNoViews(){
-		return (views.isEmpty() && tabelle.getData().equals(""));	//emptyView always returns ""
-		// return (views.isEmpty() && tabelle.getClass().equals(new EmptyView())); //works but seems unneccesarry
+		return (views.isEmpty() && tabelle.sameType(""));	//emptyView returns true on ""
+		// return (views.isEmpty() && tabelle.getClass().equals(new EmptyView())); //works but seems unnecessary
 	}
 	
 	public static ArrayList<ViewIF> getViews(){
 		return views;
 	}
-	
 	
 	@Override
 	public void addView(ViewIF newView){
