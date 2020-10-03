@@ -29,7 +29,7 @@ public class Auto {
         switch (kundentyp) {
             case "Normal" -> this.kundetyp = new NormalerKunde();
             case "Auto.Firmenkunde" -> this.kundetyp = new Firmenkunde();
-            case ("Abbonent") -> this.kundetyp = new Abonnent();
+            case ("Abonnent") -> this.kundetyp = new Abonnent();
         }
     }
     public void ausfahrt(int zeitaufenhalt,int parkplatznummer){

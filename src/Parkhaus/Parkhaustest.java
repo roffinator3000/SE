@@ -49,7 +49,7 @@ public class Parkhaustest {
 		auto[2] = "123";//Darstellung?
 		auto[5] = "#2346";
 		auto[6] = "4536";
-		auto[8] = "Abonnent";
+		auto[8] = "Abbonent";
 		auto[9] = "Familie";
 		
 		parkhaus.autoEnter(auto);
