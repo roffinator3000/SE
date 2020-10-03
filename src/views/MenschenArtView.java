@@ -1,15 +1,18 @@
 /*
-	Author:			R. Kuhn
+	Author:			Lawin Daskin und R. Kuhn
 	Coauthor:		
 	Refactoring:	
 	Date:			07.09.2020
 	Time:			18:51
-	Time spent:		0.2 h
+	Time spent:		1 h
 */
 package views;
 
 import Parkhaus.ParkhausIF;
 import Servlet.ControllerIF;
+
+import javax.json.Json;
+import javax.json.JsonObject;
 
 public class MenschenArtView extends ViewAbs{
 	private String data = "<h2> this is the incomplete view for MENSCHENART</h2>";
@@ -22,7 +25,30 @@ public class MenschenArtView extends ViewAbs{
 	
 	@Override
 	public String update(){
-		data = "<h2> this is <i>not</i> a real view</h2><br> PS: Menschenart";
+		int[] anzahlkunden =parkhaus.gibDaten()[1];
+
+
+		JsonObject  value= Json.createObjectBuilder()
+				.add("data",Json.createArrayBuilder()
+						.add(Json.createObjectBuilder()
+								.add("labels",Json.createArrayBuilder()
+										.add("Frauen")
+										.add("Behinderte")
+										.add("Familien")
+										.add("Andere"))
+								.add("values",Json.createArrayBuilder()
+										.add(anzahlkunden[0])
+										.add(anzahlkunden[1])
+										.add(anzahlkunden[2])
+										.add(anzahlkunden[3]))
+								.add("type","pie")
+						)).build();
+
+		data = "<script type=\"text/javascript\"> var test2 = function(){var layout2 = {   height: 400,   width: 500 };  Plotly.newPlot('myDiv2', "+value.toString()+", layout2);}\n" +
+				"if(!window.load)\n" +
+				"  window.load = []\n" +
+				"window.load.push(test2);</script><br>" +
+				"<div id='myDiv2' class='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>";
 		return data;
 	}
 	

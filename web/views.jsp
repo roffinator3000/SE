@@ -11,7 +11,9 @@
 <html>
 	<head>
 		<title>Views - Semesterprojekt Parkhaus</title>
-<%--		<meta http-equiv="refresh" content="1"/>--%>
+		<meta http-equiv="refresh" content="5"/>
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<br>
@@ -28,5 +30,14 @@
 			out.println(ParkhausServlet.getTabelleData());
 		}
 		%>
+		<%--Author:		Lawin Daskin
+		  Date			03.10.2020
+		  Time			13:24
+	      Time spent:		20 m--%>
+	<script>window.onload = () => {
+		for(const func of window.load)
+			func();
+	}</script>
+      <%-- /lawin Daskin --%>
 	</body>
 </html>
