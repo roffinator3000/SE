@@ -8,10 +8,12 @@
 */
 package Auto;
 
+import java.util.Date;
+
 public class Auto {
     private int nummerschild;
-    private int zeitreinfahren;
-    private int zeitaufenhalt;
+    private Date zeitreinfahren;
+    private long zeitaufenhalt;
     private int kosten;
     private String tickehash;
     private String farbcode;
@@ -19,7 +21,7 @@ public class Auto {
     private Kunde kundetyp;
     private String menschenart;
 
-    public Auto(int nummerschild,int zeitreinfahren,String tickehash,String farbcode,String kundentyp,String menschenart){
+    public Auto(int nummerschild,Date zeitreinfahren,String tickehash,String farbcode,String kundentyp,String menschenart){
         this.nummerschild=nummerschild;
         this.zeitreinfahren=zeitreinfahren;
         this.tickehash=tickehash;
@@ -32,8 +34,8 @@ public class Auto {
             case ("Abonnent") -> this.kundetyp = new Abonnent();
         }
     }
-    public void ausfahrt(int zeitaufenhalt,int parkplatznummer){
-        this.kosten=this.kundetyp.preisberechnen(zeitaufenhalt);
+    public void ausfahrt(long zeitaufenhalt,int parkplatznummer){
+       // this.kosten=this.kundetyp.preisberechnen(zeitaufenhalt);
         this.zeitaufenhalt=zeitaufenhalt;
         this.parkplatznummer=parkplatznummer;
     }
@@ -41,11 +43,11 @@ public class Auto {
         return nummerschild;
     }
 
-    public int getZeitreinfahren() {
+    public Date getZeitreinfahren() {
         return zeitreinfahren;
     }
 
-    public int getZeitaufenhalt() {
+    public long getZeitaufenhalt() {
         return zeitaufenhalt;
     }
 

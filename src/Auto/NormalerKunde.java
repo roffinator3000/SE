@@ -10,7 +10,7 @@ package Auto;
 
 public class NormalerKunde implements Kunde{
     @Override
-    public int preisberechnen(int zeit) {
+    public long preisberechnen(long zeit) {
         return zeit*3;
     }
 }

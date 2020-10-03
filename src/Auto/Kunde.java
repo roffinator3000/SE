@@ -10,6 +10,6 @@ package Auto;
 
 public interface Kunde {
 
-     int preisberechnen(int zeit);
+     long preisberechnen(long zeit);
 
 }

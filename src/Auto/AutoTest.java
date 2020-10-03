@@ -11,6 +11,8 @@ package Auto;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.Date;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AutoTest {
@@ -18,7 +20,7 @@ public class AutoTest {
         static Auto a1;
         @BeforeAll
         static void test1(){
-            a1 = new Auto(23,123311,"#aaddjaj","#HkfjJ1","Firmenkunde","Frau");
+            a1 = new Auto(23,new Date(),"#aaddjaj","#HkfjJ1","Firmenkunde","Frau");
 
 
         }
