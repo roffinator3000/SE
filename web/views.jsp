@@ -12,7 +12,8 @@
 	<head>
 		<title>Views - Semesterprojekt Parkhaus</title>
 		<meta http-equiv="refresh" content="5"/>
-		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<script src="plotly-latest.min.js"></script>
+<%--		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>--%>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
