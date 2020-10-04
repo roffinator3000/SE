@@ -11,7 +11,7 @@
 		<script src='parkhaus-9.1.7.js'></script>
 		<script type="text/javascript">
 			
-			let server_url = "http://localhost:8080/web_war_exploded/Parkhaus";
+			let server_url = "${pageContext.request.contextPath}/Parkhaus";
 			async function csv_post_event(event, ...values) {
 				if (server_url) {
 					const request = [event, ...values].join(",");
@@ -77,9 +77,8 @@
 		<button class="button" onclick='csv_post_event("button", "tabelle")'>Log als Tabelle</button>
 		
 		<br>
-		<br>
 		<a href="${pageContext.request.contextPath}/views.jsp" target="_blank" class="button">
-			Show choosen Data</a>
+			Auswahl anzeigen</a>
 		
 		<br><br>
 		
