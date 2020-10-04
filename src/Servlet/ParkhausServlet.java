@@ -88,7 +88,7 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 			case "menschenArt" -> new MenschenArtView(this, parkhaus);
 			case "tabelle" -> new TabelleView(this, parkhaus);
 			case "kunden" -> new KundenView(this, parkhaus);
-			case "Einnahmen" -> new EinnahmenView(this, parkhaus);
+			case "einnahmen" -> new EinnahmenView(this, parkhaus);
 		}
 	}
 	

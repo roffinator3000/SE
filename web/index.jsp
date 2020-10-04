@@ -71,7 +71,7 @@
 		
 		<button class="button" onclick='csv_post_event("button", "kunden")'>Übersicht Kunden</button>
 		
-		<button class="button" onclick='csv_post_event("button", "einnahemn")'>Übersicht Einnahemn</button>
+		<button class="button" onclick='csv_post_event("button", "einnahmen")'>Übersicht Einnahmen</button>
 		
 		
 		<button class="button" onclick='csv_post_event("button", "tabelle")'>Log als Tabelle</button>
