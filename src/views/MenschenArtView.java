@@ -4,7 +4,7 @@
 	Refactoring:	
 	Date:			07.09.2020
 	Time:			18:51
-	Time spent:		1 h
+	Time spent:		1.15 h
 */
 package views;
 
@@ -45,9 +45,10 @@ public class MenschenArtView extends ViewAbs{
 		
 		data = "<script type=\"text/javascript\"> var test2 = function(){var layout2 = {   height: 400,   width: 500 };  Plotly.newPlot('myDiv2', "+value.toString()+", layout2);}\n" +
 				"if(!window.load)\n" +
-				"  window.load = []\n" +
+				"	window.load = []\n" +
 				"window.load.push(test2);</script><br>" +
-				"<div id='myDiv2' class='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>";
+				"<div id='myDiv2' class='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>" +
+				"Sollte nichts zu sehen sein so sind wahrscheinlich noch keine Autos in das Parkhaus eingefahren";
 		return data;
 	}
 	
