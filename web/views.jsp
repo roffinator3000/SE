@@ -19,7 +19,7 @@
             <br>
             <%--<br><br>--%>
 		<div class="header">
-			<a href="#default" class="logo"> <img src="/logo_print_studierende.jpg"  alt="Parkhaus"> </a>
+			<a class="logo"> Verwaltungsübersicht</a>
 			<div class="header-right">
 				<a class="active" href="#home">Home</a>
 			</div>
