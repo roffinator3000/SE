@@ -1,10 +1,71 @@
-/*Author:		L. Daskin
-Date			03.10.2020
-Time			13:14
-Time spent:		10 m*/
+/*
+	Author:		L. Daskin
+	Date			03.10.2020
+	Time			13:14
+	Time spent:		10 m
+*/
 
 .myDiv {
 	width: 600px;
 	height: 400px;
 	align: left;
 }
+
+/*
+	Author:		R. Kuhn
+	Date			04.10.2020
+	Time			17:32
+	Time spent:		0.1 h
+*/
+
+button { /*https://www.w3schools.com/csS/css3_buttons.asp*/
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background-color: #434343; /* Black */
+	border: none;
+	color: white;
+	padding: 15px 17px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	border-radius: 4px;
+}
+
+button:hover {
+	background-color: #009aB4; /* Blue */
+	color: white;
+}
+
+button:active {
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	transform: translateY(4px);
+}
+
+
+.button { /*https://www.w3schools.com/csS/css3_buttons.asp*/
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background-color: #434343; /* Black */
+	border: none;
+	color: white;
+	padding: 15px 17px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	border-radius: 4px;
+}
+
+.button:hover {
+	background-color: #009aB4; /* Blue */
+	color: white;
+}
+
+.button:active {
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	transform: translateY(4px);
+}
+/*		/R. Kuhn		*/

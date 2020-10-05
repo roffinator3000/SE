@@ -8,6 +8,7 @@
 <html>
 	<head>
 		<title>Semesterprojekt Parkhaus</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src='parkhaus-9.1.7.js'></script>
 		<script type="text/javascript">
 			
@@ -34,28 +35,6 @@
 				}
 			}
 		</script>
-		
-		<style>
-			.button { /*https://www.w3schools.com/csS/css3_buttons.asp*/
-				background-color: #434343; /* Black */
-				border: none;
-				color: white;
-				padding: 15px 17px;
-				text-align: center;
-				text-decoration: none;
-				display: inline-block;
-				font-size: 14px;
-				margin: 4px 2px;
-				transition-duration: 0.4s;
-				border-radius: 4px;
-			}
-			
-			.button:hover {
-				background-color: #009aB4; /* Blue */
-				color: white;
-			}
-		
-		</style>
 	</head>
 	<body>
 		<h1>Parkhaus-Simulation </h1>
