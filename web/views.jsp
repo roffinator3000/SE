@@ -47,6 +47,12 @@
 		
 	</head>
 	<body>
+		<div class="header">
+			<a class="logo"> Verwaltungsübersicht</a>
+			<div class="header-right">
+				<a class="active" href="#home">Home</a>
+			</div>
+		</div>
 		<br>
 		
 		<% if (ParkhausServlet.hasNoViews()){
