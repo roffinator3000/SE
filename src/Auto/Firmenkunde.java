@@ -10,7 +10,12 @@ package Auto;
 
 public class Firmenkunde implements Kunde {
     @Override
-    public long preisberechnen(long zeit) {
-        return zeit*2;
+    public int preisberechnen(long zeit) {
+        return (int) zeit*2/5;
+    }
+    
+    @Override
+    public String getKundenTyp(){
+        return "Firmenkunde";
     }
 }

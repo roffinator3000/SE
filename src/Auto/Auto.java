@@ -4,7 +4,7 @@
   Refactoring:  
   Date:      04.09.20
   Time:      11:51
-  Time spent:    2.0 h
+  Time spent:    2.2 h
 */
 package Auto;
 
@@ -30,12 +30,12 @@ public class Auto {
 
         switch (kundentyp) {
             case "Normal" -> this.kundetyp = new NormalerKunde();
-            case "Auto.Firmenkunde" -> this.kundetyp = new Firmenkunde();
-            case ("Abonnent") -> this.kundetyp = new Abonnent();
+            case "Firmenkunde" -> this.kundetyp = new Firmenkunde();
+            case "Abonnent" -> this.kundetyp = new Abonnent();
         }
     }
     public void ausfahrt(long zeitaufenhalt,int parkplatznummer){
-       // this.kosten=this.kundetyp.preisberechnen(zeitaufenhalt);
+        this.kosten=this.kundetyp.preisberechnen(zeitaufenhalt);
         this.zeitaufenhalt=zeitaufenhalt;
         this.parkplatznummer=parkplatznummer;
     }
@@ -77,5 +77,9 @@ public class Auto {
 
     public String getMenschenart() {
         return menschenart;
+    }
+    
+    public String getKundentyp() {
+        return kundetyp.getKundenTyp();
     }
 }
