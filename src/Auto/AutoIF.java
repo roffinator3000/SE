@@ -4,7 +4,7 @@
   Refactoring:  
   Date:      04.09.20
   Time:      11:34
-  Time spent:    0.2 h
+  Time spent:    20m
 */
 package Auto;
 
