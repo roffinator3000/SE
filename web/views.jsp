@@ -19,7 +19,9 @@
 		
 		<script type="text/javascript">
 			
-			setInterval(function(){ page_refresher(); }, 1500);		//refreshes the page every x seconds if needed
+			setInterval(function () {
+				page_refresher();
+			}, 1500);		//refreshes the page every x seconds if needed
 			
 			async function page_refresher() {
 				var boo = refresh_post_event();
@@ -28,6 +30,8 @@
 					location.reload();
 				}
 			}
+			
+			/*	based on content from 'parkhaus-9.1.7.js'	*/
 			
 			async function refresh_post_event() {
 				const request = "gotNewData";
@@ -43,8 +47,11 @@
 				// console.log(response_string);
 				return response_string;
 			}
-		</script>
+			
+			/*		/'parkhaus-9.1.7.js'		 */
 		
+		</script>
+	
 	</head>
 	<body>
 		<div class="header">

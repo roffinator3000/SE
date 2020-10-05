@@ -12,6 +12,8 @@
 		<script src='parkhaus-9.1.7.js'></script>
 		<script type="text/javascript">
 			
+			/*	based on content from 'parkhaus-9.1.7.js'	*/
+			
 			let server_url = "${pageContext.request.contextPath}/Parkhaus";
 			async function csv_post_event(event, ...values) {
 				if (server_url) {
@@ -34,6 +36,9 @@
 					console.log("No server_url");
 				}
 			}
+			
+			/*		/'parkhaus-9.1.7.js'		 */
+			
 		</script>
 	</head>
 	<body>
@@ -44,7 +49,8 @@
 		<br>
 		<h2>Anzeigeoptionen: </h2>
 		</div>
-<%--		Optionen: &emsp--%>
+		
+<%--		based on content from: https://www.w3schools.com/csS/css3_buttons.asp--%>
 		
 		<button class="button" onclick='csv_post_event("button", "kundenTyp")'>Graph Kundentyp</button>
 		
@@ -60,6 +66,8 @@
 		<br>
 		<a href="${pageContext.request.contextPath}/views.jsp" target="_blank" class="button">
 			Auswahl anzeigen</a>
+		
+<%--			/w3schools.com		--%>
 		
 		<br><br>
 		
