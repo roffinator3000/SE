@@ -16,10 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 
 @WebServlet("/Parkhaus")
@@ -27,6 +24,7 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 	private static final ArrayList<ViewIF> views = new ArrayList<>();
 	private static ViewIF tabelle = new EmptyView();
 	private static ParkhausIF parkhaus = new Parkhaus();
+	private static boolean newerViews = false;	// are data shown in views on latest state
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String body = getBody(request);
@@ -37,12 +35,28 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 			case "enter" -> {
 				parkhaus.autoEnter(bodyArr);
 				updater();
+				if(!hasNoViews()){
+					newerViews = true;
+				}
 			}
 			case "leave" -> {
 				parkhaus.autoLeave(bodyArr);
 				updater();
+				if(!hasNoViews()){
+					newerViews = true;
+				}
 			}
-			case "button", "choose" -> toggleView(bodyArr[1]);
+			case "button", "choose" -> {
+				toggleView(bodyArr[1]);
+					newerViews = true;
+			}
+			case "gotNewData" -> {
+				response.setContentType("text/html");
+				PrintWriter out = response.getWriter();
+				out.println(newerViews);
+				"gotNewData".equalsIgnoreCase("");
+				newerViews = false;		//views are now on latest state
+			}
 		}
 	}
 	
@@ -74,7 +88,7 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 			case "menschenArt" -> new MenschenArtView(this, parkhaus);
 			case "tabelle" -> new TabelleView(this, parkhaus);
 			case "kunden" -> new KundenView(this, parkhaus);
-			case "Einnahmen" -> new EinnahmenView(this, parkhaus);
+			case "einnahmen" -> new EinnahmenView(this, parkhaus);
 		}
 	}
 	

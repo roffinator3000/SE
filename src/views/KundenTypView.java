@@ -4,7 +4,7 @@
 	Refactoring:	
 	Date:			07.09.2020
 	Time:			18:55
-	Time spent:		7 h
+	Time spent:		7.05 h
 */
 package views;
 
@@ -46,7 +46,8 @@ public class KundenTypView extends ViewAbs{
 				"if(!window.load)\n" +
 				"	window.load = []\n" +
 				"window.load.push(test);</script><br>" +
-				"<div id='myDiv' class='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>";
+				"<div id='myDiv' class='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>" +
+				"Sollte nichts zu sehen sein so sind wahrscheinlich noch keine Autos in das Parkhaus eingefahren";
 		
 		return data;
 	}
