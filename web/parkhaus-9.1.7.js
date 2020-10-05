@@ -45,7 +45,7 @@ url: 'https://ccmjs.github.io/mkaul-components/parkhaus/versions/ccm.parkhaus-9.
                                 'Autos im Parkhaus "%name%": &nbsp; ',
                                 { tag: 'span', class: 'counter', inner: '0' },
                                 ', &nbsp; Max: &nbsp; ',
-                                { tag: 'input', class: 'max', type: 'number', min: 0, value: "%max%", oninput: '%oninput%' },
+                                { tag: 'input', class: 'max ', type: 'number', min: 0, value: "%max%", oninput: '%oninput%' },
                                 ' &nbsp; Frei: &nbsp; ',
                                 { tag: 'span', class: 'free', inner: ' &nbsp; &nbsp; ' },
                                 ' &nbsp; Öffnungszeiten von : &nbsp; ',
@@ -248,8 +248,10 @@ url: 'https://ccmjs.github.io/mkaul-components/parkhaus/versions/ccm.parkhaus-9.
             SALT: "123",
 
             chart: [ "ccm.component", "https://ccmjs.github.io/mkaul-components/plotly/versions/ccm.plotly-1.1.2.js" ],
-
-            css: [ 'ccm.load',  'https://ccmjs.github.io/mkaul-components/parkhaus/resources/default.css' ]
+    
+            // css: [ 'ccm.load',  'default.css' ],
+            css: [ 'ccm.load',  'style.css' ]
+            // css: [ 'ccm.load',  'https://ccmjs.github.io/mkaul-components/parkhaus/resources/default.css' ]
             // css: [ 'ccm.load',  'https://kaul.inf.h-brs.de/ccmjs/mkaul-components/parkhaus/resources/default.css' ]
         },
 
