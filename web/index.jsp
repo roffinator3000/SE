@@ -2,7 +2,7 @@
 	Author:			R. Kuhn
 	Date:			08.08.2020
 	Time			15:12
-	Time spent:		5.1 h
+	Time spent:		5.25 h
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -37,11 +37,13 @@
 		</script>
 	</head>
 	<body>
+		<div class='textView'>
 		<h1>Parkhaus-Simulation </h1>
 		<h3>Projekt von Lawin Daskin, Raphael Kuhn und Constanze Schirmacher</h3>
 		<h4>Erstellt für Softwareengineering 1 bei Prof. M. Kaul</h4>
 		<br>
 		<h2>Anzeigeoptionen: </h2>
+		</div>
 <%--		Optionen: &emsp--%>
 		
 		<button class="button" onclick='csv_post_event("button", "kundenTyp")'>Graph Kundentyp</button>

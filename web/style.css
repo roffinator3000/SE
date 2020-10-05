@@ -15,7 +15,7 @@
 	Author:		R. Kuhn
 	Date			04.10.2020
 	Time			17:32
-	Time spent:		0.1 h
+	Time spent:		0.25 h
 */
 
 button { /*https://www.w3schools.com/csS/css3_buttons.asp*/
@@ -69,3 +69,8 @@ button:active {
 	transform: translateY(4px);
 }
 /*		/R. Kuhn		*/
+
+.textView{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+}
