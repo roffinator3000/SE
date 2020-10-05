@@ -4,7 +4,7 @@
 	Refactoring:	
 	Date:			07.09.2020
 	Time:			18:55
-	Time spent:		7.05 h
+	Time spent:		7.5 h
 */
 package views;
 
@@ -28,7 +28,7 @@ public class KundenTypView extends ViewAbs{
 	public String update(){
 		int[] anzahlKunden = parkhaus.gibDaten()[0];
 		
-		JsonObject  value= Json.createObjectBuilder()
+		JsonObject value= Json.createObjectBuilder()
 				.add("data",Json.createArrayBuilder()
 						.add(Json.createObjectBuilder()
 								.add("labels",Json.createArrayBuilder()
@@ -42,13 +42,19 @@ public class KundenTypView extends ViewAbs{
 								.add("type","pie")
 						)).build();
 		
-		data ="<script type=\"text/javascript\"> var test= function(){ var layout = {   height: 400,   width: 500 };  Plotly.newPlot('myDiv', "+value.toString()+", layout);}\n" +
+		data = "<div class='textView'>\n";
+		data += "<h2>Kunden des Parkhauses:</h2>\n";
+		data += "</div>\n";
+		data += "<script type=\"text/javascript\"> var test= function(){ var layout = { height: 400, width: 500 }; Plotly.newPlot('myDiv', "+value.toString()+", layout);}\n" +
 				"if(!window.load)\n" +
 				"	window.load = []\n" +
-				"window.load.push(test);</script><br>" +
-				"<div id='myDiv' class='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>" +
-				"Sollte nichts zu sehen sein so sind wahrscheinlich noch keine Autos in das Parkhaus eingefahren";
+				"window.load.push(test);</script><br>\n" +
+				"<div id='myDiv' class='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>\n";
 		
+		data += "<div class='textView'>\n";
+		data += "Sollte nichts zu sehen sein so sind wahrscheinlich noch keine Autos in das Parkhaus eingefahren\n";
+		data += "</div>\n";
+		data += "<br>\n";
 		return data;
 	}
 	

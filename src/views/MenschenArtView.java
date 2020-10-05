@@ -4,7 +4,7 @@
 	Refactoring:	
 	Date:			07.09.2020
 	Time:			18:51
-	Time spent:		1.15 h
+	Time spent:		1.75 h
 */
 package views;
 
@@ -43,12 +43,20 @@ public class MenschenArtView extends ViewAbs{
 								.add("type","pie")
 						)).build();
 		
-		data = "<script type=\"text/javascript\"> var test2 = function(){var layout2 = {   height: 400,   width: 500 };  Plotly.newPlot('myDiv2', "+value.toString()+", layout2);}\n" +
+		data = "<div class='textView'>\n";
+		data += "<h2>Kunden des Parkhauses:</h2>\n";
+		data += "</div>\n";
+		data += "<script type=\"text/javascript\"> var test2 = function(){var layout2 = { height: 400, width: 500 };" +
+				" Plotly.newPlot('myDiv2', "+value.toString()+", layout2);}\n" +
 				"if(!window.load)\n" +
-				"	window.load = []\n" +
-				"window.load.push(test2);</script><br>" +
-				"<div id='myDiv2' class='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>" +
-				"Sollte nichts zu sehen sein so sind wahrscheinlich noch keine Autos in das Parkhaus eingefahren";
+				"\t	window.load = []\n" +
+				"window.load.push(test2);</script><br>\n" +
+				"<div id='myDiv2' class='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>\n";
+		
+		data += "<div class='textView'>\n";
+		data += "Sollte nichts zu sehen sein so sind wahrscheinlich noch keine Autos in das Parkhaus eingefahren\n";
+		data += "</div>\n";
+		data += "<br>\n";
 		return data;
 	}
 	
