@@ -11,7 +11,8 @@ package Auto;
 public class Abonnent implements Kunde{
     @Override
     public int preisberechnen(long zeit) {
-        return (int) zeit/5;
+        int preisBerechnet = (int) ((zeit*2.5)/5);
+        return preisBerechnet > 599 ? 599 : preisBerechnet;
     }
     
     @Override
