@@ -10,6 +10,6 @@ package Auto;
 
 public interface Kunde {
 
-     long preisberechnen(long zeit);
-
+     int preisberechnen(long zeit);
+     String getKundenTyp();
 }

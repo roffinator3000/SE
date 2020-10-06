@@ -54,7 +54,6 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 				response.setContentType("text/html");
 				PrintWriter out = response.getWriter();
 				out.println(newerViews);
-				"gotNewData".equalsIgnoreCase("");
 				newerViews = false;		//views are now on latest state
 			}
 		}

@@ -2,7 +2,7 @@
 	Author:			R. Kuhn
 	Date			07.09.2020
 	Time			18:17
-	Time spent:		0.75 h
+	Time spent:		1 h
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="Servlet.ParkhausServlet" %>
@@ -14,10 +14,14 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src="plotly-latest.min.js"></script>
 <%--		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>--%>
-		
+
 <%--		<meta http-equiv="refresh" content="5"/>--%>
 		
 		<script type="text/javascript">
+			
+			setInterval(function () {
+				page_refresher();
+			}, 1500);		//refreshes the page every x seconds if needed
 			
 			async function page_refresher() {
 				var boo = refresh_post_event();
@@ -26,6 +30,8 @@
 					location.reload();
 				}
 			}
+			
+			/*	based on content from 'parkhaus-9.1.7.js'	*/
 			
 			async function refresh_post_event() {
 				const request = "gotNewData";
@@ -41,22 +47,32 @@
 				// console.log(response_string);
 				return response_string;
 			}
-		</script>
+			
+			/*		/'parkhaus-9.1.7.js'		 */
 		
+		</script>
+	
 	</head>
 	<body>
+		<div class="header">
+			<a class="logo"> Verwaltungsübersicht</a>
+			<div class="header-right">
+				<a class="active" href="#home">Home</a>
+			</div>
+		</div>
 		<br>
-		<script type="text/javascript">
-			setInterval(function(){ page_refresher(); }, 1500);		//refreshes the page every x seconds if needed
-		</script>
 		
 		<% if (ParkhausServlet.hasNoViews()){
-			out.print("<h2><t>looks like you did not choose any options for graphics</h2>");
+			out.print(
+						"<div class='textView'>" +
+						"<h2><t>looks like you did not choose any options for graphics</h2>" +
+						"</div>"
+					);
 		} else{
 			ArrayList<ViewIF> views = ParkhausServlet.getViews();
 			for (ViewIF view : views){
 				out.println(view.getData());
-				out.println("<br><br>");
+				out.println("<br>");
 			}
 			out.println(ParkhausServlet.getTabelleData());
 		}
@@ -71,6 +87,5 @@
 				func();
 		}</script>
 		<%--	/Lawin Daskin	--%>
-	
 	</body>
 </html>
