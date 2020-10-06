@@ -46,6 +46,13 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 					newerViews = true;
 				}
 			}
+			case "occupied" -> {		//wenn webkomponente versucht, einen platz doppelt zu belegen
+				parkhaus.autoDelete(bodyArr);
+				updater();
+				if(!hasNoViews()){
+					newerViews = true;
+				}
+			}
 			case "button", "choose" -> {
 				toggleView(bodyArr[1]);
 					newerViews = true;

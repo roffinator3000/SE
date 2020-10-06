@@ -4,7 +4,7 @@
 	Refactoring:	
 	Date:			01.09.2020
 	Time:			22:20
-	Time spent:		1.6 h
+	Time spent:		2.75 h
 */
 package Parkhaus;
 
@@ -65,8 +65,9 @@ public class Parkhaus implements ParkhausIF {
 	@Override
 	public void autoLeave(String[] altesAuto) {
 		Auto carLeaving = null;
-		for (Auto a: autosEingefahren) {
-			if (Integer.parseInt(altesAuto[1]) == a.getNummerschild() && altesAuto[6].equals(a.getFarbcode())){
+		
+		for (Auto a : autosEingefahren) {
+			if (Integer.parseInt(altesAuto[1]) == a.getNummerschild() && altesAuto[6].equals(a.getFarbcode())) {
 				carLeaving = a;
 			}
 		}
@@ -75,6 +76,48 @@ public class Parkhaus implements ParkhausIF {
 		carLeaving.ausfahrt(Long.parseLong(altesAuto[3]), Integer.parseInt(altesAuto[7]));
 		einnahmen += carLeaving.getKosten();
 		autosAusgefahren.add(carLeaving);
+	}
+	
+	public void autoDelete(String[] falschesAuto) {		//wenn webkomponente versucht, einen platz doppelt zu belegen
+//		int l = falschesAuto[1].length();						// "Car(xyz)", "Car(xy)" oder "Car(x)" ?
+//		String fAuto = falschesAuto[1].substring(4,(l-1));		// "Car(xyz)" -> "xyz"
+//		int nummerFalschesAuto = Integer.parseInt(fAuto);		// "xyz" -> xyz
+//
+//		Auto carDeleting = null;
+//		for (Auto a: autosEingefahren) {
+//			if (nummerFalschesAuto == a.getNummerschild()){
+//				carDeleting = a;
+//			}
+//		}
+//		autosEingefahren.remove(carDeleting);
+		Auto carDeleting = autosEingefahren.get(autosEingefahren.size()-1);
+		autosEingefahren.remove(carDeleting);
+		
+		switch (carDeleting.getKundentyp().toLowerCase()){
+			case "abonnent":
+				kundentyp[0]--;
+				break;
+			case "firmenkunde":
+				kundentyp[1]--;
+				break;
+			case "normal":
+				kundentyp[2]--;
+				break;
+		}
+		switch (carDeleting.getMenschenart().toLowerCase()){
+			case "frau":
+				menschenart[0]--;
+				break;
+			case "behindert":
+				menschenart[1]--;
+				break;
+			case "familie":
+				menschenart[2]--;
+				break;
+			case "andere":
+				menschenart[3]--;
+				break;
+		}
 	}
 	
 	@Override
