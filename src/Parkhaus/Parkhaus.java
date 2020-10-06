@@ -4,7 +4,7 @@
 	Refactoring:	
 	Date:			01.09.2020
 	Time:			22:20
-	Time spent:		2.75 h
+	Time spent:		3 h
 */
 package Parkhaus;
 
@@ -15,6 +15,8 @@ import Auto.Auto;
 
 public class Parkhaus implements ParkhausIF {
 	
+	private static Parkhaus singletonParkhaus = new Parkhaus();
+	
 	private ArrayList<Auto> autosAusgefahren;
 	private ArrayList<Auto> autosEingefahren;
 	private int[] kundentyp;
@@ -22,16 +24,20 @@ public class Parkhaus implements ParkhausIF {
 	private int einnahmen;
 	
 	
-	public Parkhaus(){
+	private Parkhaus(){
 		autosAusgefahren = new ArrayList<>();
 		autosEingefahren = new ArrayList<>();
 		kundentyp = new int[3];		// Abonennt, Firmenkunde, normal
 		menschenart = new int[4];	// Frauen, Behinderte, Familie, andere
 	}
 	
+	public static Parkhaus getParkhaus(){
+		return singletonParkhaus;
+	}
+	
 	@Override
 	public void autoEnter(String[] neuesAuto) {
-								//	nummernschild				zeit einfahrt					tickethash	farbcode		kundentyp	menschenart
+		//							nummernschild						zeit einfahrt				tickethash		farbcode	kundentyp	menschenart
 		Auto auto = new Auto(Integer.parseInt(neuesAuto[1]), new Date(Long.parseLong(neuesAuto[2])), neuesAuto[5], neuesAuto[6], neuesAuto[8], neuesAuto[9]);
 		autosEingefahren.add(auto);
 		
