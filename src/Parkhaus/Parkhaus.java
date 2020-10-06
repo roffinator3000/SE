@@ -15,7 +15,7 @@ import Auto.Auto;
 
 public class Parkhaus implements ParkhausIF {
 	
-	private static Parkhaus singletonParkhaus = new Parkhaus();
+	private final static Parkhaus singletonParkhaus = new Parkhaus();
 	
 	private ArrayList<Auto> autosAusgefahren;
 	private ArrayList<Auto> autosEingefahren;
