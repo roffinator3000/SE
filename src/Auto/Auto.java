@@ -10,7 +10,7 @@ package Auto;
 
 import java.util.Date;
 
-public class Auto {
+public class Auto implements AutoIF{
     private int nummerschild;
     private Date zeitreinfahren;
     private long zeitaufenhalt;
