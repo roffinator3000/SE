@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AutoTest {
 
-        static Auto a1;
+        static AutoIF a1;
         @BeforeAll
         static void test1(){
             a1 = new Auto(23,new Date(),"#aaddjaj","#HkfjJ1","Firmenkunde","Frau");

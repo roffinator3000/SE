@@ -8,12 +8,14 @@
 */
 package Auto;
 
+import java.util.Date;
+
 public interface AutoIF {
      int getNummerschild();
 
-     int getZeitreinfahren();
+     Date getZeitreinfahren();
 
-     int getZeitaufenhalt();
+     long getZeitaufenhalt();
 
      int getKosten();
 
