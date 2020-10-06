@@ -1,5 +1,5 @@
 /*
-	Author:		L. Daskin
+	Author:			L. Daskin
 	Date			03.10.2020
 	Time			13:14
 	Time spent:		10 m
@@ -73,7 +73,7 @@ body {
 /*	/w3schools.com		*/
 
 /*
-	Author:		R. Kuhn
+	Author:			R. Kuhn
 	Date			04.10.2020
 	Time			17:32
 	Time spent:		1.5 h
@@ -131,7 +131,47 @@ button:active {
 	transform: translateY(4px);
 }
 /*		/R. Kuhn
-	/w3schools.com		*/
+		/w3schools.com		*/
+
+/*
+	Author:			C. Schirmacher
+	Date			05.10.2020
+	Time			15:32
+	Time spent:		1.25 h
+*/
+
+
+#autoTabelle {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#autoTabelle td, #autoTabelle th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#autoTabelle tr:nth-child(even){background-color: #f2f2f2;}
+
+#autoTabelle tr:hover {background-color: #ddd;}
+
+#autoTabelle th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #434343; /* Black */
+	color: white;
+}
+.tabelle{
+	width: 750px;
+	position: absolute;
+	top: 93px;
+	right: 3px;
+}
+
+/*		/C. Schirmacher		*/
 
 .textView{
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
