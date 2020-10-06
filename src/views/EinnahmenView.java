@@ -9,11 +9,10 @@
 package views;
 
 import Auto.Auto;
-import Parkhaus.Parkhaus;
 import Parkhaus.ParkhausIF;
 import Servlet.ControllerIF;
 
-import java.util.ArrayList;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class EinnahmenView extends ViewAbs{
@@ -26,11 +25,30 @@ public class EinnahmenView extends ViewAbs{
 	}
 	
 	@Override
-	public String update(){
-		List<Auto> autosAusgefahren = parkhaus.gibAutos()[0];
-		// summe einahmen
-		// durchschnittliche einnahmen
-		data = "<h2> this is <i>not</i> a real view</h2><br> PS: EinnahmenView";
+	public String update() {
+	
+/*
+		Author:			C. Schirmacher
+		Date			06.10.2020
+		Time			15:32
+		Time spent:		0.75 h
+*/
+		
+		int[][] daten = parkhaus.gibDaten();
+		float einnahmen = (float) daten[2][0] / 100;
+		int ehemaligeKunden = parkhaus.gibAutos()[0].size();
+		float durchschnitt = (einnahmen / ehemaligeKunden);
+		DecimalFormat df = new DecimalFormat("0.00");
+		
+		data = "<div class='textView'>\n";
+		data += "<h2>Einnahmen des Parkhauses:</h2>\n";
+		data += df.format(einnahmen) + 		"€ hat das Parkhaus insgesamt eingenommen. <br>\n";
+		data += df.format(durchschnitt) +	"€ beträgt die durchschnittliche Einnahme pro Kunde.<br>\n";
+		data += "<br>\n";
+		data += "</div>\n";
+		
+		/*		/C. Schirmacher		*/
+		
 		return data;
 	}
 	

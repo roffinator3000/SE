@@ -4,7 +4,7 @@
 	Refactoring:	
 	Date:			01.09.2020
 	Time:			22:20
-	Time spent:		1.5 h
+	Time spent:		1.6 h
 */
 package Parkhaus;
 
@@ -19,6 +19,7 @@ public class Parkhaus implements ParkhausIF {
 	private ArrayList<Auto> autosEingefahren;
 	private int[] kundentyp;
 	private int[] menschenart;
+	private int einnahmen;
 	
 	
 	public Parkhaus(){
@@ -72,14 +73,16 @@ public class Parkhaus implements ParkhausIF {
 		autosEingefahren.remove(carLeaving);
 		//						zeit aufenthalt				parkplatznummer
 		carLeaving.ausfahrt(Long.parseLong(altesAuto[3]), Integer.parseInt(altesAuto[7]));
+		einnahmen += carLeaving.getKosten();
 		autosAusgefahren.add(carLeaving);
 	}
 	
 	@Override
 	public int[][] gibDaten() {
-		int[][] parameter = new int[2][];
+		int[][] parameter = new int[3][];
 		parameter[0] = kundentyp;
 		parameter[1] = menschenart;
+		parameter[2] = new int[]{einnahmen};
 		return parameter;
 	}
 	
