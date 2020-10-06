@@ -64,20 +64,24 @@ public class Parkhaus implements ParkhausIF {
 	
 	@Override
 	public void autoLeave(String[] altesAuto) {
-		Auto carLeaving = null;
-		
-		for (Auto a : autosEingefahren) {
-			if (Integer.parseInt(altesAuto[1]) == a.getNummerschild() && altesAuto[6].equals(a.getFarbcode())) {
-				carLeaving = a;
+		try{
+			Auto carLeaving = null;
+			
+			for (Auto a : autosEingefahren){
+				if (Integer.parseInt(altesAuto[1]) == a.getNummerschild() && altesAuto[6].equals(a.getFarbcode())){
+					carLeaving = a;
+				}
 			}
+			autosEingefahren.remove(carLeaving);
+			//							zeit Aufenhalt					parkplatznummer
+			carLeaving.ausfahrt(Long.parseLong(altesAuto[3]), Integer.parseInt(altesAuto[7]));
+			einnahmen += carLeaving.getKosten();
+			autosAusgefahren.add(carLeaving);
+		} catch (NullPointerException e){
+			System.out.println("NullPointerException");
+			System.out.println("Parkhaus.Parkhaus.autoLeave (in Parkhaus.java)");
 		}
-		autosEingefahren.remove(carLeaving);
-		//						zeit aufenthalt				parkplatznummer
-		carLeaving.ausfahrt(Long.parseLong(altesAuto[3]), Integer.parseInt(altesAuto[7]));
-		einnahmen += carLeaving.getKosten();
-		autosAusgefahren.add(carLeaving);
 	}
-	
 	public void autoDelete(String[] falschesAuto) {		//wenn webkomponente versucht, einen platz doppelt zu belegen
 //		int l = falschesAuto[1].length();						// "Car(xyz)", "Car(xy)" oder "Car(x)" ?
 //		String fAuto = falschesAuto[1].substring(4,(l-1));		// "Car(xyz)" -> "xyz"
