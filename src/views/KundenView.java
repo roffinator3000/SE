@@ -25,10 +25,28 @@ public class KundenView extends ViewAbs{
 	
 	@Override
 	public String update(){
+	
+/*
+		Author:			C. Schirmacher
+		Date			06.10.2020
+		Time			15:32
+		Time spent:		0.5 h
+*/
+		
 		List<Auto>[] alleAutos = parkhaus.gibAutos();
-		// anzahl kunden aktuell
-		// anzahl kunden gesamt
-		data = "<h2> this is <i>not</i> a real view</h2><br> PS: KundenView";
+		
+		int ehemaligeKunden = alleAutos[0].size();
+		int aktuelleKunden = alleAutos[1].size();
+		
+		data = "<div class='textView'>\n";
+		data += "<h2>Kunden des Parkhauses:</h2>\n";
+		data += "" + (ehemaligeKunden + aktuelleKunden) + 	" Kunden hatte das Parkhaus insgesamt. <br>\n";
+		data += "" + aktuelleKunden + 						" davon sind aktuell noch im Pakhaus.<br>\n";
+		data += "<br>\n";
+		data += "</div>\n";
+		
+		/*		/C. Schirmacher		*/
+		
 		return data;
 	}
 	

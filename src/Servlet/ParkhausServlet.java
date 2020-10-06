@@ -23,8 +23,8 @@ import java.util.ArrayList;
 public class ParkhausServlet extends HttpServlet implements ControllerIF{
 	private static final ArrayList<ViewIF> views = new ArrayList<>();
 	private static ViewIF tabelle = new EmptyView();
-	private static ParkhausIF parkhaus = new Parkhaus();
-	private static boolean newerViews = false;	// are data shown in views on latest state
+	private static ParkhausIF parkhaus = Parkhaus.getParkhaus();
+	private static boolean newerViews = true;	// are data shown in views on latest state
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String body = getBody(request);
@@ -41,6 +41,13 @@ public class ParkhausServlet extends HttpServlet implements ControllerIF{
 			}
 			case "leave" -> {
 				parkhaus.autoLeave(bodyArr);
+				updater();
+				if(!hasNoViews()){
+					newerViews = true;
+				}
+			}
+			case "occupied" -> {		//wenn webkomponente versucht, einen platz doppelt zu belegen
+				parkhaus.autoDelete(bodyArr);
 				updater();
 				if(!hasNoViews()){
 					newerViews = true;

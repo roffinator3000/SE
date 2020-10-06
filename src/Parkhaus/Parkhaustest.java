@@ -30,7 +30,7 @@ public class Parkhaustest {
 	//	@Order(1)
 	@Test
 	public void Test1(){
-		Parkhaus parkhaus = new Parkhaus();
+		Parkhaus parkhaus = Parkhaus.getParkhaus();
 		ArrayList<Auto>[] alleAutos = parkhaus.gibAutos();
 		ArrayList<Auto>autosEingefahren = alleAutos[1];
 		ArrayList<Auto>autosAusgefahren = alleAutos[0];
@@ -43,7 +43,7 @@ public class Parkhaustest {
 	//	@Order(2)
 	@Test
 	public void Test2(){
-		Parkhaus parkhaus = new Parkhaus();
+		Parkhaus parkhaus = Parkhaus.getParkhaus();
 		String[] auto = new String[20];
 		auto[1] = "233";
 		auto[2] = "123";//Darstellung?
@@ -67,7 +67,7 @@ public class Parkhaustest {
 	//	@Order(3)
 	@Test
 	public void Test3(){
-		Parkhaus parkhaus = new Parkhaus();
+		Parkhaus parkhaus = Parkhaus.getParkhaus();
 		String[] auto = new String[20];
 		auto[1] = "233";
 		auto[2] = "123";//Darstellung?
@@ -92,7 +92,7 @@ public class Parkhaustest {
 	}
 	@Test
 	public void Test4(){
-		Parkhaus parkhaus = new Parkhaus();
+		Parkhaus parkhaus = Parkhaus.getParkhaus();
 		String[] auto1 = new String[20];
 		auto1[1] = "233";
 		auto1[2] = "123";//Darstellung?
@@ -141,7 +141,7 @@ public class Parkhaustest {
 	}
 	@Test
 	public void Test5(){
-		Parkhaus parkhaus = new Parkhaus();
+		Parkhaus parkhaus = Parkhaus.getParkhaus();
 		String[] auto1 = new String[20];
 		auto1[1] = "233";
 		auto1[2] = "123";//Darstellung?
@@ -191,7 +191,7 @@ public class Parkhaustest {
 	}
 	@Test
 	public void Test6(){
-		Parkhaus parkhaus = new Parkhaus();
+		Parkhaus parkhaus = Parkhaus.getParkhaus();
 		String[] auto1 = new String[20];
 		auto1[1] = "233";
 		auto1[2] = "123";//Darstellung?

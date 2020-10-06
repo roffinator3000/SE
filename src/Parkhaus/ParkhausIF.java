@@ -13,6 +13,7 @@ public interface ParkhausIF {
 	
 	void autoEnter(String[] neuesAuto);
 	void autoLeave(String[] altesAuto);
+	void autoDelete(String[] falschesAuto);
 	int[][] gibDaten();
 	List<Auto>[] gibAutos();
 }
