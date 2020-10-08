@@ -42,8 +42,13 @@
 		</script>
 	</head>
 	<body>
+		<div class="header">
+			<a class="logo"> Parkhaus-Simulation: MVP-Version</a>
+			<div class="header-right">
+				<a class="active" href="${pageContext.request.contextPath}/views.jsp" target="_blank" >View-Page</a>
+			</div>
+		</div>
 		<div class='textView'>
-		<h1>Parkhaus-Simulation </h1>
 		<h3>Projekt von Lawin Daskin, Raphael Kuhn und Constanze Schirmacher</h3>
 		<h4>Erstellt für Softwareengineering 1 bei Prof. M. Kaul</h4>
 		<br>
