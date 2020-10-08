@@ -17,13 +17,13 @@
 [Verzeichnis eingesetzter Pattern](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/Verzeichnis_Pattern.pdf) \
 [Bericht Zielkonflikte](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/Zielkonflikte_Resumee_Fazit.pdf) \
 [Iterationsbericht inkl. Kanban-Board](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/Iterationsbericht_KanbanBoard.pdf) \
-[Summarisches Projektprotokoll]() \
+[Summarisches Projektprotokoll](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/Summarisches_Projektprotokoll.pdf) \
 [Resumée und Fazit](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/Zielkonflikte_Resumee_Fazit.pdf) \
-[Tabelle Eigenleistungen]() \
+[Tabelle Eigenleistungen](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/Eigenleistung.pdf) \
 [Java-Elemente](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/Java_Verzeichnis.md)
 
 [Präsentationsfolien PDF](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/Praesentation_Semesterprojekt.pdf) \
 [Präsentationsfolien PP](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/Praesentation_Semesterprojekt.pptx) \
 [Präsentation YouTube: https://youtu.be/XHCXIQCgp1o](https://youtu.be/XHCXIQCgp1o) \
 [Demonstration Projekt YouTube: https://youtu.be/OqDGTjW2PIA](https://youtu.be/OqDGTjW2PIA) \
-[Projekthandbuch]()
+[Projekthandbuch](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/Produkthandbuch.pdf)
