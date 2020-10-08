@@ -20,7 +20,7 @@
 		<div class="header">
 			<a class="logo"> Verwaltungsübersicht</a>
 			<div class="header-right">
-				<a class="active" href="#home">Home</a>
+				<a class="active" href="${pageContext.request.contextPath}">Start-Page</a>
 			</div>
 		</div>
 		<br>
