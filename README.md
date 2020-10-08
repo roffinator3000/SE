@@ -6,13 +6,13 @@
 [UserStories mit Priorisierung](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/Userstories_mit_Gewichtung.pdf) \
 [Minimal Viable Product](https://github.com/roffinator3000/SE/tree/MinimalViableProduct)
 
-[UML-Diagramme:](https://github.com/roffinator3000/SE/tree/master/Dokumente_Abgabe/UML) \
-    [Robustheitsdiagramm](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/UML/UML-Robustheitsdiagramm.pdf) \
-    [Usecase-Diagramm](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/UML/UML-Usecasediagramm.pdf) \
-    [Klassendiagramm](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/UML/UML-Klassendiagramm.pdf) \
-    [Sequenzdiagramme](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/UML/UML-Sequenzdiagramm.pdf) \
-    [Aktivitätsdiagramme](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/UML/UML-Aktivitaetssdiagramm.pdf) \
-    [Verteilungsdiagramm](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/UML/UML-Verteilungsdiagramm.pdf)
+* [UML-Diagramme:](https://github.com/roffinator3000/SE/tree/master/Dokumente_Abgabe/UML)
+    * [Robustheitsdiagramm](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/UML/UML-Robustheitsdiagramm.pdf)
+    * [Usecase-Diagramm](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/UML/UML-Usecasediagramm.pdf)
+    * [Klassendiagramm](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/UML/UML-Klassendiagramm.pdf)
+    * [Sequenzdiagramme](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/UML/UML-Sequenzdiagramm.pdf)
+    * [Aktivitätsdiagramme](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/UML/UML-Aktivitaetssdiagramm.pdf)
+    * [Verteilungsdiagramm](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/UML/UML-Verteilungsdiagramm.pdf)
 
 [Verzeichnis eingesetzter Pattern](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/Verzeichnis_Pattern.pdf) \
 [Bericht Zielkonflikte](https://github.com/roffinator3000/SE/blob/master/Dokumente_Abgabe/Zielkonflikte_Resumee_Fazit.pdf) \
