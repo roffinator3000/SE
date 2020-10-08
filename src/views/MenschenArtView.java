@@ -56,7 +56,6 @@ public class MenschenArtView extends ViewAbs{
 		data += "<div class='textView'>\n";
 		data += "Sollte nichts zu sehen sein so sind wahrscheinlich noch keine Autos in das Parkhaus eingefahren\n";
 		data += "</div>\n";
-		data += "<br>\n";
 		return data;
 	}
 	

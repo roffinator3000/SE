@@ -7,7 +7,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 	<head>
-		<title>Semesterprojekt Parkhaus</title>
+		<title>MVP Semesterprojekt Parkhaus</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src='parkhaus-9.1.7.js'></script>
 		<script type="text/javascript">
@@ -43,29 +43,16 @@
 	</head>
 	<body>
 		<div class='textView'>
-		<h1>Parkhaus-Simulation </h1>
+		<h1>Parkhaus-Simulation: MVP-Version</h1>
 		<h3>Projekt von Lawin Daskin, Raphael Kuhn und Constanze Schirmacher</h3>
 		<h4>Erstellt für Softwareengineering 1 bei Prof. M. Kaul</h4>
-		<br>
-		<h2>Anzeigeoptionen: </h2>
 		</div>
 		
 <%--		based on content from: https://www.w3schools.com/csS/css3_buttons.asp--%>
 		
-		<button class="button" onclick='csv_post_event("button", "kundenTyp")'>Graph Kundentyp</button>
-		
-		<button class="button" onclick='csv_post_event("button", "menschenArt")'>Graph Menschenart</button>
-		
-		<button class="button" onclick='csv_post_event("button", "kunden")'>Übersicht Kunden</button>
-		
-		<button class="button" onclick='csv_post_event("button", "einnahmen")'>Übersicht Einnahmen</button>
-		
-		
-		<button class="button" onclick='csv_post_event("button", "tabelle")'>Log als Tabelle</button>
-		
 		<br>
 		<a href="${pageContext.request.contextPath}/views.jsp" target="_blank" class="button">
-			Auswahl anzeigen</a>
+			Statistische Daten anzeigen</a>
 		
 <%--			/w3schools.com		--%>
 		

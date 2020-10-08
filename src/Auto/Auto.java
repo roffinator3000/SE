@@ -18,7 +18,7 @@ public class Auto implements AutoIF{
     private String tickehash;
     private String farbcode;
     private int parkplatznummer;
-    private Kunde kundetyp;
+    private String kundetyp;
     private String menschenart;
 
     public Auto(int nummerschild,Date zeitreinfahren,String tickehash,String farbcode,String kundentyp,String menschenart){
@@ -26,17 +26,12 @@ public class Auto implements AutoIF{
         this.zeitreinfahren=zeitreinfahren;
         this.tickehash=tickehash;
         this.farbcode=farbcode;
-        this.menschenart=menschenart;
-
-        switch (kundentyp) {
-            case "Normal" -> this.kundetyp = new NormalerKunde();
-            case "Firmenkunde" -> this.kundetyp = new Firmenkunde();
-            case "Abonnent" -> this.kundetyp = new Abonnent();
-        }
+        this.menschenart = menschenart;
+        this.kundetyp = kundentyp;
     }
     public void ausfahrt(long zeitaufenhalt,int parkplatznummer){
-        this.kosten=this.kundetyp.preisberechnen(zeitaufenhalt);
-        this.zeitaufenhalt=zeitaufenhalt;
+        this.kosten = (int) ((zeitaufenhalt * 2.9) / 5);
+        this.zeitaufenhalt = zeitaufenhalt;
         this.parkplatznummer=parkplatznummer;
     }
     public int getNummerschild() {
@@ -80,6 +75,6 @@ public class Auto implements AutoIF{
     }
     
     public String getKundentyp() {
-        return kundetyp.getKundenTyp();
+        return kundetyp;
     }
 }

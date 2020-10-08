@@ -8,12 +8,10 @@
 */
 package views;
 
-import Auto.Auto;
 import Parkhaus.ParkhausIF;
 import Servlet.ControllerIF;
 
 import java.text.DecimalFormat;
-import java.util.List;
 
 public class EinnahmenView extends ViewAbs{
 	private String data = "<h2> this is the incomplete view for EinnahmenView</h2>";
@@ -44,31 +42,6 @@ public class EinnahmenView extends ViewAbs{
 		data += "<h2>Einnahmen des Parkhauses:</h2>\n";
 		data += df.format(einnahmen) + 		"€ hat das Parkhaus insgesamt eingenommen. <br>\n";
 		data += df.format(durchschnitt) +	"€ beträgt die durchschnittliche Einnahme pro Kunde.<br>\n";
-		data += "<br>\n";
-		
-		List<Auto> autos = parkhaus.gibAutos()[0];
-		
-		float einnahmeAbonnenten = autos.parallelStream()
-				.filter(Auto -> Auto.getKundentyp().equals("Abonnent"))
-				.mapToInt(Auto -> Auto.getKosten())
-				.reduce(0, (sum, Auto) -> sum + Auto)/100.0f;
-		
-		float einnahmeFirmen = autos.parallelStream()
-				.filter(Auto -> Auto.getKundentyp().equals("Firmenkunde"))
-				.mapToInt(Auto -> Auto.getKosten())
-				.reduce(0, (sum, Auto) -> sum + Auto)/100.0f;
-		
-		float einnahmeNormal = autos.parallelStream()
-				.filter(Auto -> Auto.getKundentyp().equals("NormalerKunde"))
-				.mapToInt(Auto -> Auto.getKosten())
-				.reduce(0, (sum, Auto) -> sum + Auto)/100.0f;
-		
-		data += "Dabei ist die Verteilung wie folgt:<br>\n";
-		data += df.format(einnahmeAbonnenten) +	"€ von " + daten[0][0] + " Abonnenten.<br>\n";
-		data += df.format(einnahmeFirmen) +		"€ von " + daten[0][1] + " Firmenkunden.<br>\n";
-		data += df.format(einnahmeNormal) +		"€ von " + daten[0][2] + " regulären Kunden.<br>\n";
-		data += "<br>\n";
-		data += "</div>\n";
 		
 		/*		/C. Schirmacher		*/
 		

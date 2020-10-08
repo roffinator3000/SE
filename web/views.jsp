@@ -10,48 +10,11 @@
 <%@ page import="java.util.ArrayList" %>
 <html>
 	<head>
-		<title>Views - Semesterprojekt Parkhaus</title>
+		<title>MVP Views - Semesterprojekt Parkhaus</title>
+		<meta http-equiv="refresh" content="5"/>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src="plotly-latest.min.js"></script>
 <%--		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>--%>
-
-<%--		<meta http-equiv="refresh" content="5"/>--%>
-		
-		<script type="text/javascript">
-			
-			setInterval(function () {
-				page_refresher();
-			}, 1500);		//refreshes the page every x seconds if needed
-			
-			async function page_refresher() {
-				var boo = refresh_post_event();
-				if (((await boo).localeCompare("true")) == 0) {
-					// window.location.reload(true);
-					location.reload();
-				}
-			}
-			
-			/*	based on content from 'parkhaus-9.1.7.js'	*/
-			
-			async function refresh_post_event() {
-				const request = "gotNewData";
-				const response = await fetch(new Request("${pageContext.request.contextPath}/Parkhaus"), {
-					method: 'POST',
-					mode: 'cors',
-					cache: 'no-store',
-					body: request,
-					headers: {'Content-Type': 'text/plain'}
-				});
-				const response_string = (await response.text()).trim();
-				// const result = command_interpreter(response_string);
-				// console.log(response_string);
-				return response_string;
-			}
-			
-			/*		/'parkhaus-9.1.7.js'		 */
-		
-		</script>
-	
 	</head>
 	<body>
 		<div class="header">
@@ -74,7 +37,6 @@
 				out.println(view.getData());
 				out.println("<br>");
 			}
-			out.println(ParkhausServlet.getTabelleData());
 		}
 		%>
 		

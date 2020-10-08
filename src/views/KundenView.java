@@ -42,7 +42,6 @@ public class KundenView extends ViewAbs{
 		data += "<h2>Kunden des Parkhauses:</h2>\n";
 		data += "" + (ehemaligeKunden + aktuelleKunden) + 	" Kunden hatte das Parkhaus insgesamt. <br>\n";
 		data += "" + aktuelleKunden + 						" davon sind aktuell noch im Pakhaus.<br>\n";
-		data += "<br>\n";
 		data += "</div>\n";
 		
 		/*		/C. Schirmacher		*/
